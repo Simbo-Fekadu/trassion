@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Transsion Holdings Ethiopia</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&family=Segoe+Script&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- In the <head> of ims.html and index.html -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="index">
+    <header>
+      <button
+        class="nav-toggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <div class="logo">
+        <img src="images/logo.png" alt="Logo" />
+        <div class="logo-text-container">
+          <span class="site-name">Transsion Holdings Ethiopia</span>
+          <span class="tagline">Together We Can</span>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="market.html">Market</a></li>
+          <li><a href="csr.html">CSR</a></li>
+          <li><a href="ims.html">IMS Policy</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero container">
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        class="hero-video"
+        poster="images/hero-poster.jpg"
+        width="1280"
+        height="720"
+      >
+        <source src="videos/hero-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="hero-text">
+        <h1>Empowering Africa with Smart Technology</h1>
+        <p>Connecting communities through innovative mobile solutions.</p>
+        <a href="about.html" class="btn">Discover More</a>
+      </div>
+    </section>
+
+    <section class="page-content container">
+      <h2>Who We Are</h2>
+      <p class="first-paragraph">
+        Transsion Holdings Ethiopia is part of Transsion Holdings, a leader in
+        smart devices and mobile services for Africa. We bring TECNO, Infinix,
+        itel, Syinix, and Oraimo to millions, empowering communities with
+        reliable technology solutions.
+      </p>
+      <a href="about.html" class="btn">Learn More</a>
+    </section>
+
+    <section class="brands-preview container">
+      <h2>Our Brands</h2>
+      <div class="brands-logos">
+        <img
+          src="images/tecbrand.png"
+          alt="TECNO Spark"
+          loading="lazy"
+          width="160"
+          height="80"
+        />
+        <img
+          src="images/infbrand.png"
+          alt="Infinix Note"
+          loading="lazy"
+          width="160"
+          height="80"
+        />
+        <img
+          src="images/itelbrand.png"
+          alt="itel T528"
+          loading="lazy"
+          width="160"
+          height="80"
+        />
+        <img
+          src="images/syibrand.png"
+          alt="Syinix"
+          loading="lazy"
+          width="160"
+          height="80"
+        />
+        <img
+          src="images/orabrand.png"
+          alt="Oraimo Powerbank"
+          loading="lazy"
+          width="160"
+          height="80"
+        />
+        <img
+          src="images/carlbrand.png"
+          alt="Other Brands"
+          loading="lazy"
+          width="160"
+          height="80"
+        />
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Transsion Holdings Ethiopia. All rights reserved.</p>
+      <nav>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="ims.html">IMS Policy</a></li>
+        </ul>
+      </nav>
+      <div class="social-icons">
+        <a
+          href="https://www.facebook.com/TranssionHoldings"
+          target="_blank"
+          aria-label="Facebook"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/company/transsion-holdings/"
+          target="_blank"
+          aria-label="LinkedIn"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <a
+          href="https://www.youtube.com/@TECNOMobile"
+          target="_blank"
+          aria-label="YouTube"
+          ><i class="fab fa-youtube"></i
+        ></a>
+      </div>
+    </footer>
+
+    <script>
+      let lastScrollTop = 0;
+      const header = document.querySelector("header");
+      window.addEventListener(
+        "scroll",
+        () => {
+          let st = window.pageYOffset || document.documentElement.scrollTop;
+          header.style.top = st > lastScrollTop ? "-80px" : "0";
+          lastScrollTop = st <= 0 ? 0 : st;
+        },
+        false
+      );
+    </script>
+    <script src="js/header.js" defer></script>
+  </body>
+</html>

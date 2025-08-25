@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IMS Policy - Transsion Holdings Ethiopia</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Segoe+Script&family=Segoe+UI:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo.png" alt="Transsion Holdings Ethiopia Logo" />
+        </a>
+        <div class="logo-text-container">
+          <span class="site-name">Transsion Holdings Ethiopia</span>
+          <span class="tagline">Together We Can</span>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="market.html">Market</a></li>
+          <li><a href="csr.html">CSR</a></li>
+          <li><a href="ims.html" class="active">IMS Policy</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="ims-policy page-content">
+      <h1>Integrated Management System (IMS)</h1>
+      <p class="first-paragraph">
+        Transsion Holdings Ethiopia is certified under ISO 9001, demonstrating
+        our commitment to quality management and continuous improvement.
+      </p>
+
+      <h2>Our Commitment</h2>
+      <p>We strive to:</p>
+      <ul>
+        <li>
+          Provide high-quality products and services that exceed customer
+          expectations.
+        </li>
+        <li>
+          Continuously improve processes and operations for better efficiency.
+        </li>
+        <li>
+          Ensure compliance with applicable laws, regulations, and industry
+          standards.
+        </li>
+        <li>Maintain a culture of excellence, safety, and responsibility.</li>
+      </ul>
+
+      <ul>
+        <li>
+          <strong>Quality Management:</strong> Our IMS ensures that all products
+          and services meet the highest quality standards. Processes are
+          regularly monitored and improved to enhance customer satisfaction,
+          reduce defects, and increase operational efficiency.
+        </li>
+
+        <li>
+          <strong>Environmental Responsibility:</strong> We actively minimize
+          our environmental impact through sustainable practices, efficient
+          resource usage, and compliance with environmental regulations,
+          promoting a greener and safer future.
+        </li>
+
+        <li>
+          <strong>Health and Safety:</strong> Employee well-being is a priority.
+          Our IMS enforces strict safety protocols, training programs, and risk
+          assessments to ensure a safe and secure workplace.
+        </li>
+
+        <li>
+          <strong>Energy Management:</strong> Energy efficiency is integrated
+          into operations to reduce consumption, lower costs, and support
+          sustainable business practices, aligning with ISO 50001 standards.
+        </li>
+
+        <li>
+          <strong>Continuous Improvement:</strong> All IMS processes are
+          regularly reviewed and audited. Lessons learned and corrective actions
+          help us innovate, improve performance, and maintain excellence across
+          the organization.
+        </li>
+      </ul>
+
+      <p>
+        <strong>Our Vision:</strong> We aim to be a leader in integrating
+        quality, sustainability, safety, and energy efficiency into every aspect
+        of our operations, ensuring long-term value for customers and
+        stakeholders.
+      </p>
+
+      <p>
+        <strong>Training and Awareness:</strong> Regular training programs
+        ensure all employees understand and follow IMS principles, fostering a
+        culture of responsibility and excellence throughout the organization.
+      </p>
+
+      <!-- ISO Certificate Box -->
+      <div
+        class="iso-certification"
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 30px;
+          border: 2px solid #0078d7;
+          border-radius: 15px;
+          background-color: #f0f8ff;
+          max-width: 400px;
+          margin: 40px auto;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+          text-align: center;
+        "
+      >
+        <i
+          class="fas fa-certificate"
+          style="font-size: 50px; color: #0078d7; margin-bottom: 15px"
+        ></i>
+        <h3 style="margin-bottom: 15px; font-size: 28px; color: #0078d7">
+          ISO 9001:2015 Certified
+        </h3>
+        <p>
+          Transsion Holdings Ethiopia is officially certified under ISO
+          9001:2015, reflecting our commitment to Quality Management Systems,
+          operational excellence, and continuous improvement.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Transsion Holdings Ethiopia. All rights reserved.</p>
+      <nav>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="ims.html">IMS Policy</a></li>
+        </ul>
+      </nav>
+      <div class="social-icons">
+        <a
+          href="https://www.facebook.com/TranssionHoldings"
+          target="_blank"
+          aria-label="Facebook"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/company/transsion-holdings/"
+          target="_blank"
+          aria-label="LinkedIn"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <a
+          href="https://www.youtube.com/@TECNOMobile"
+          target="_blank"
+          aria-label="YouTube"
+          ><i class="fab fa-youtube"></i
+        ></a>
+      </div>
+    </footer>
+
+    <script>
+      let lastScrollTop = 0;
+      const header = document.querySelector("header");
+      window.addEventListener(
+        "scroll",
+        () => {
+          let st = window.pageYOffset || document.documentElement.scrollTop;
+          if (st > lastScrollTop) {
+            header.style.top = "-80px";
+          } else {
+            header.style.top = "0";
+          }
+          lastScrollTop = st <= 0 ? 0 : st;
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Corporate Social Responsibility - Transsion Holdings Ethiopia</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Segoe+Script&family=Segoe+UI:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="images/logo.png" alt="Logo" />
+        <div class="logo-text-container">
+          <span class="site-name">Transsion Holdings Ethiopia</span>
+          <span class="tagline">Together We Can</span>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="market.html">Market</a></li>
+          <li><a href="csr.html" class="active">CSR</a></li>
+          <li><a href="ims.html">IMS Policy</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="page-content">
+      <h1>Corporate Social Responsibility</h1>
+      <p class="first-paragraph">
+        At Transsion Holdings Ethiopia, we believe business success goes
+        hand-in-hand with making a positive impact on society. Guided by the
+        global CSR vision of our parent company, Transsion Holdings, we strive
+        to operate responsibly, support communities, and create sustainable
+        value for people and the environment.
+      </p>
+
+      <h2>Our CSR Commitment</h2>
+      <ul>
+        <li>
+          <strong>Ethical Manufacturing:</strong> Following international
+          standards for labor rights, workplace safety, and environmental
+          protection.
+        </li>
+        <li>
+          <strong>Community Engagement:</strong> Supporting local skills
+          development, job creation, and opportunities for youth.
+        </li>
+        <li>
+          <strong>Sustainability:</strong> Reducing waste, promoting energy
+          efficiency, and sourcing materials responsibly.
+        </li>
+        <li>
+          <strong>Innovation for Inclusion:</strong> Providing technology that
+          is accessible, affordable, and tailored to local needs.
+        </li>
+      </ul>
+
+      <h2>Global CSR Highlights</h2>
+      <ul>
+        <li>
+          <strong>Education for Refugees & Youth:</strong> Partnerships with
+          UNHCR, DAFI scholarships, and refugee education programs across
+          Africa.
+        </li>
+        <li>
+          <strong>Digital Learning Programs:</strong> UNICEF Learning Passport,
+          TECNO Future Star scholarships, and tech classrooms in African
+          universities.
+        </li>
+        <li>
+          <strong>Community & Relief Efforts:</strong> Itel’s Love Always On
+          campaign, humanitarian aid during disasters, and donations to schools.
+        </li>
+        <li>
+          <strong>Environmental Responsibility:</strong> Conflict-free minerals
+          policy, lean manufacturing, and green product innovation.
+        </li>
+      </ul>
+
+      <h2>Our Focus in Ethiopia</h2>
+      <p>As our presence in Ethiopia grows, we are committed to:</p>
+      <ul>
+        <li>Launching local educational and community support programs.</li>
+        <li>
+          Partnering with government and NGOs to address social and
+          environmental priorities.
+        </li>
+        <li>Creating meaningful employment with fair working conditions.</li>
+      </ul>
+
+      <p>
+        CSR at Transsion Holdings Ethiopia is more than a policy—it’s part of
+        our culture, guiding how we operate and contribute to Ethiopia’s future.
+      </p>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Transsion Holdings Ethiopia. All rights reserved.</p>
+      <nav>
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms of Use</a>
+        <a href="ims.html">IMS Policy</a>
+      </nav>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/TranssionHoldings" target="_blank"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/company/transsion-holdings/"
+          target="_blank"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <a href="https://www.youtube.com/@TECNOMobile" target="_blank"
+          ><i class="fab fa-youtube"></i
+        ></a>
+      </div>
+    </footer>
+
+    <script>
+      let lastScrollTop = 0;
+      const header = document.querySelector("header");
+      window.addEventListener(
+        "scroll",
+        () => {
+          let st = window.pageYOffset || document.documentElement.scrollTop;
+          if (st > lastScrollTop) {
+            header.style.top = "-80px";
+          } else {
+            header.style.top = "0";
+          }
+          lastScrollTop = st <= 0 ? 0 : st;
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

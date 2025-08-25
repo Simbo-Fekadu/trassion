@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Market - Transsion Holdings Ethiopia</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Segoe+Script&family=Segoe+UI:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="images/logo.png" alt="Logo" />
+        <div class="logo-text-container">
+          <span class="site-name">Transsion Holdings Ethiopia</span>
+          <span class="tagline">Together We Can</span>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="market.html" class="active">Market</a></li>
+          <li><a href="csr.html">CSR</a></li>
+          <li><a href="ims.html">IMS Policy</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Market Presence Section -->
+    <section class="page-content market-section">
+      <div class="market-text-intro">
+        <h1 class="about-main-heading">Our Market Presence</h1>
+        <p class="first-paragraph">
+          Transsion Holdings Ethiopia is committed to reaching customers in
+          every corner of the country. Through strong distribution networks,
+          trusted retail partners, and dedicated service centers, we ensure that
+          our products are accessible, reliable, and backed by exceptional
+          after-sales care. Our mission is to connect communities with
+          innovative technology while supporting local economic growth.
+        </p>
+      </div>
+
+      <!-- Customer Support Section -->
+      <div class="market-text">
+        <h2>Customer Support</h2>
+        <p>
+          Our customer service teams are dedicated to providing timely
+          assistance and professional after-sales support. Whether through our
+          hotline, service centers, or online platforms, we aim to deliver quick
+          solutions and ensure customer satisfaction at every step.
+        </p>
+      </div>
+    </section>
+
+    <!-- Two images side by side under the text -->
+    <section class="market-images-container">
+      <img src="images/tecshop.png" alt="Market Image 1" />
+      <img src="images/shoptec.png" alt="Market Image 2" />
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Transsion Holdings Ethiopia. All rights reserved.</p>
+      <nav>
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms of Use</a>
+        <a href="ims.html">IMS Policy</a>
+      </nav>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/TranssionHoldings" target="_blank"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/company/transsion-holdings/"
+          target="_blank"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <a href="https://www.youtube.com/@TECNOMobile" target="_blank"
+          ><i class="fab fa-youtube"></i
+        ></a>
+      </div>
+    </footer>
+
+    <script>
+      let lastScrollTop = 0;
+      const header = document.querySelector("header");
+      window.addEventListener(
+        "scroll",
+        () => {
+          let st = window.pageYOffset || document.documentElement.scrollTop;
+          if (st > lastScrollTop) {
+            header.style.top = "-80px";
+          } else {
+            header.style.top = "0";
+          }
+          lastScrollTop = st <= 0 ? 0 : st;
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Us - Transsion Holdings Ethiopia</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Segoe+Script&family=Segoe+UI:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <button
+        class="nav-toggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <div class="logo">
+        <img src="images/logo.png" alt="Logo" width="60" height="60" />
+        <div class="logo-text-container">
+          <span class="site-name">Transsion Holdings Ethiopia</span>
+          <span class="tagline">Together We Can</span>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="market.html">Market</a></li>
+          <li><a href="csr.html">CSR</a></li>
+          <li><a href="ims.html">IMS Policy</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="page-content container">
+      <h1>Contact Us</h1>
+      <p class="first-paragraph">
+        We are here to help. Reach out via any of the official channels below.
+      </p>
+
+      <div class="contact-intro-cards">
+        <div class="contact-quick">
+          <ul class="contact-meta">
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <span
+                ><strong>Phone:</strong>
+                <a href="tel:+251111234567" aria-label="Main phone"
+                  >+251 11 123 4567</a
+                ></span
+              >
+            </li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              <span
+                ><strong>Email:</strong>
+                <a href="mailto:info@transsionethiopia.com"
+                  >info@transsionethiopia.com</a
+                ></span
+              >
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              <span
+                ><strong>Address:</strong> ICT Industrial Park, GORO, Addis
+                Ababa, Ethiopia</span
+              >
+            </li>
+            <li>
+              <i class="fa-solid fa-clock"></i>
+              <span
+                ><strong>Office Hours:</strong> Mon – Fri, 9:00 AM – 5:00
+                PM</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 class="contact-section-title">Official Contact Details</h2>
+      <div class="contact-grid" aria-labelledby="official-contacts">
+        <div class="contact-card" id="official-contacts">
+          <h3>
+            <i class="fa-solid fa-building"></i> Main Office (Headquarters)
+          </h3>
+          <p class="org-name">Transsion Holdings Ethiopia</p>
+          <address>
+            Welo Sefer, Garad Building<br />
+            Addis Ababa, Ethiopia
+          </address>
+          <ul class="contact-meta small">
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+251114671360">+251 11 467 1360</a>
+            </li>
+          </ul>
+        </div>
+        <div class="contact-card">
+          <h3><i class="fa-solid fa-industry"></i> Manufacturing Facility</h3>
+          <p class="org-name">Transsion Manufacturing PLC</p>
+          <address>
+            Bole Sub-City, Wereda 11<br />
+            ICT Park, Addis Ababa, Ethiopia
+          </address>
+          <span
+            class="iso-badge"
+            title="ISO 9001:2015 Assembly of mobile communication devices & appliances"
+            >ISO 9001:2015 Certified</span
+          >
+        </div>
+        <div class="contact-card">
+          <h3><i class="fa-solid fa-address-book"></i> Additional Contacts</h3>
+          <ul class="contact-meta small">
+            <li>
+              <i class="fa-solid fa-mobile-screen-button"></i>
+              <a href="tel:+251922337391">Mobile: +251 9 223 373 91</a>
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+251114671360">Telephone: +251 11 467 1360</a>
+            </li>
+            <li><i class="fa-solid fa-fax"></i> Fax: +251 11 467 1049</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="map-wrapper">
+        <iframe
+          title="Map location of Transsion Holdings Ethiopia"
+          src="https://www.google.com/maps?q=Bole+Lemi+Industrial+Park,+Addis+Ababa,+Ethiopia&output=embed"
+          width="100%"
+          height="320"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <h2>Send Us a Message</h2>
+      <form class="contact-form" aria-label="Contact form">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send</button>
+      </form>
+    </section>
+
+    <footer class="container">
+      <p>&copy; 2025 Transsion Holdings Ethiopia. All rights reserved.</p>
+      <nav>
+        <a href="privacy.html">Privacy Policy</a> |
+        <a href="terms.html">Terms of Use</a>
+        <a href="ims.html">IMS Policy</a>
+      </nav>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/TranssionHoldings" target="_blank"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/company/transsion-holdings/"
+          target="_blank"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <a href="https://www.youtube.com/@TECNOMobile" target="_blank"
+          ><i class="fab fa-youtube"></i
+        ></a>
+      </div>
+    </footer>
+
+    <script src="js/header.js" defer></script>
+  </body>
+</html>
