@@ -22,11 +22,18 @@
   </head>
   <body>
     <header>
+      <button
+        class="nav-toggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
       <div class="logo">
-        <img src="images/logo.png" alt="Logo" />
+        <img src="images/logo.png" alt="Logo" width="70" height="70" />
         <div class="logo-text-container">
           <span class="site-name">Transsion Holdings Ethiopia</span>
-          <span class="tagline">Together We Can</span>
+          <span class="tagline">together we can empower Africa</span>
         </div>
       </div>
       <nav>
@@ -40,6 +47,7 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
+      <div class="nav-backdrop"></div>
     </header>
 
     <!-- Market Presence Section -->
@@ -96,22 +104,6 @@
       </div>
     </footer>
 
-    <script>
-      let lastScrollTop = 0;
-      const header = document.querySelector("header");
-      window.addEventListener(
-        "scroll",
-        () => {
-          let st = window.pageYOffset || document.documentElement.scrollTop;
-          if (st > lastScrollTop) {
-            header.style.top = "-80px";
-          } else {
-            header.style.top = "0";
-          }
-          lastScrollTop = st <= 0 ? 0 : st;
-        },
-        false
-      );
-    </script>
+    <script src="js/header.js" defer></script>
   </body>
 </html>

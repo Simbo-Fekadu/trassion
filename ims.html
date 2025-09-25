@@ -22,13 +22,20 @@
   </head>
   <body>
     <header>
+      <button
+        class="nav-toggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
       <div class="logo">
         <a href="index.html">
           <img src="images/logo.png" alt="Transsion Holdings Ethiopia Logo" />
         </a>
         <div class="logo-text-container">
           <span class="site-name">Transsion Holdings Ethiopia</span>
-          <span class="tagline">Together We Can</span>
+          <span class="tagline">together we can empower Africa</span>
         </div>
       </div>
       <nav>
@@ -42,6 +49,7 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
+      <div class="nav-backdrop"></div>
     </header>
 
     <section class="ims-policy page-content">
@@ -117,30 +125,9 @@
       </p>
 
       <!-- ISO Certificate Box -->
-      <div
-        class="iso-certification"
-        style="
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          padding: 30px;
-          border: 2px solid #0078d7;
-          border-radius: 15px;
-          background-color: #f0f8ff;
-          max-width: 400px;
-          margin: 40px auto;
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-          text-align: center;
-        "
-      >
-        <i
-          class="fas fa-certificate"
-          style="font-size: 50px; color: #0078d7; margin-bottom: 15px"
-        ></i>
-        <h3 style="margin-bottom: 15px; font-size: 28px; color: #0078d7">
-          ISO 9001:2015 Certified
-        </h3>
+      <div class="iso-certification-box">
+        <i class="fa-solid fa-certificate" aria-hidden="true"></i>
+        <h3>ISO 9001:2015 Certified</h3>
         <p>
           Transsion Holdings Ethiopia is officially certified under ISO
           9001:2015, reflecting our commitment to Quality Management Systems,
@@ -180,22 +167,6 @@
       </div>
     </footer>
 
-    <script>
-      let lastScrollTop = 0;
-      const header = document.querySelector("header");
-      window.addEventListener(
-        "scroll",
-        () => {
-          let st = window.pageYOffset || document.documentElement.scrollTop;
-          if (st > lastScrollTop) {
-            header.style.top = "-80px";
-          } else {
-            header.style.top = "0";
-          }
-          lastScrollTop = st <= 0 ? 0 : st;
-        },
-        false
-      );
-    </script>
+    <script src="js/header.js" defer></script>
   </body>
 </html>
