@@ -88,15 +88,23 @@ function Layout() {
     }
   }, [dark]);
 
-  const linkClass = ({ isActive }) =>
-    `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+  const linkClass = ({ isActive }) => {
+    if (dark) {
+      return `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+        isActive
+          ? "text-cyan-200 bg-white/10"
+          : "text-white/80 hover:text-white hover:bg-white/10"
+      }`;
+    }
+    return `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
       isActive
-        ? "text-cyan-200 bg-white/10"
-        : "text-white/80 hover:text-white hover:bg-white/10"
+        ? "text-cyan-700 bg-cyan-50 ring-1 ring-cyan-100"
+        : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
     }`;
+  };
 
   return (
-    <div className="min-h-screen w-full flex flex-col font-sans text-slate-800 dark:text-slate-100 bg-[linear-gradient(180deg,#e6f3ff_0%,#f3f9ff_55%,#e0f0ff_100%)] dark:bg-[linear-gradient(180deg,#061529_0%,#071a33_55%,#05101f_100%)] selection:bg-cyan-500/30">
+    <div className="min-h-screen w-full flex flex-col font-sans text-slate-800 dark:text-slate-100 bg-[linear-gradient(180deg,#ffffff_0%,#f5f9fc_55%,#eaf2f8_100%)] dark:bg-[linear-gradient(180deg,#061529_0%,#071a33_55%,#05101f_100%)] selection:bg-cyan-500/30 transition-colors">
       {/* Backdrop */}
       <div
         className={`md:hidden fixed inset-0 z-40 transition-opacity duration-300 ${
@@ -107,8 +115,12 @@ function Layout() {
         onClick={() => setOpen(false)}
       />
       <header
-        className={`fixed top-0 inset-x-0 z-50 backdrop-blur shadow transition-all bg-[linear-gradient(90deg,#003b73_0%,#005a9c_50%,#0077b6_100%)] dark:bg-[linear-gradient(90deg,#021223_0%,#032b52_55%,#03406f_100%)] ${
+        className={`fixed top-0 inset-x-0 z-50 backdrop-blur transition-all ${
           scrolled ? "py-2" : "py-3"
+        } ${
+          dark
+            ? "bg-[linear-gradient(90deg,#021223_0%,#032b52_55%,#03406f_100%)] shadow"
+            : "bg-white/90 border-b border-slate-200/70 shadow-sm supports-[backdrop-filter]:bg-white/70"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-4">
@@ -144,7 +156,7 @@ function Layout() {
             ))}
             <button
               onClick={() => setDark((d) => !d)}
-              className="ml-2 inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/20 text-white/80 hover:text-white hover:bg-white/10 transition"
+              className="ml-2 inline-flex h-9 w-9 items-center justify-center rounded-md border dark:border-white/20 border-slate-300 text-slate-600 dark:text-white/80 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 transition"
               aria-label="Toggle dark mode"
               title={dark ? "Switch to light mode" : "Switch to dark mode"}
             >
@@ -179,7 +191,7 @@ function Layout() {
           <div className="flex items-center gap-2 md:hidden">
             <button
               onClick={() => setDark((d) => !d)}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/20 text-white/80 hover:text-white hover:bg-white/10 transition"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-md border dark:border-white/20 border-slate-300 text-slate-600 dark:text-white/80 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 transition"
               aria-label="Toggle dark mode"
             >
               {dark ? (
@@ -237,8 +249,12 @@ function Layout() {
         </div>
         {/* Mobile drawer */}
         <div
-          className={`md:hidden fixed top-0 right-0 h-full w-72 max-w-[80%] z-50 bg-[linear-gradient(180deg,#003760_0%,#004b80_40%,#003760_100%)] dark:bg-[linear-gradient(180deg,#052038_0%,#063255_45%,#041627_100%)] backdrop-blur-xl shadow-xl pt-24 pb-8 px-6 flex flex-col gap-3 transform transition-transform duration-300 ${
+          className={`md:hidden fixed top-0 right-0 h-full w-72 max-w-[80%] z-50 backdrop-blur-xl shadow-xl pt-24 pb-8 px-6 flex flex-col gap-3 transform transition-transform duration-300 ${
             open ? "translate-x-0" : "translate-x-full"
+          } ${
+            dark
+              ? "bg-[linear-gradient(180deg,#052038_0%,#063255_45%,#041627_100%)] text-slate-100"
+              : "bg-white text-slate-800 border-l border-slate-200"
           }`}
         >
           {navItems.map((n) => (
@@ -247,9 +263,13 @@ function Layout() {
               to={n.to}
               className={({ isActive }) =>
                 `block rounded px-3 py-2 text-sm font-medium tracking-wide ${
-                  isActive
-                    ? "bg-cyan-500/20 text-cyan-300"
-                    : "text-slate-100 hover:bg-white/10"
+                  dark
+                    ? isActive
+                      ? "bg-cyan-500/20 text-cyan-300"
+                      : "text-slate-100 hover:bg-white/10"
+                    : isActive
+                    ? "bg-cyan-50 text-cyan-700 ring-1 ring-cyan-100"
+                    : "text-slate-700 hover:bg-slate-100"
                 }`
               }
               onClick={() => setOpen(false)}
@@ -257,10 +277,10 @@ function Layout() {
               {n.label}
             </NavLink>
           ))}
-          <div className="mt-6 border-t border-white/10 pt-4 flex items-center justify-between">
+          <div className="mt-6 border-t border-slate-200 dark:border-white/10 pt-4 flex items-center justify-between">
             <button
               onClick={() => setDark((d) => !d)}
-              className="inline-flex items-center gap-2 text-sm font-medium text-white/80 hover:text-white"
+              className="inline-flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-slate-900 dark:text-white/80 dark:hover:text-white"
             >
               {dark ? (
                 <span className="flex items-center gap-1">
@@ -302,13 +322,13 @@ function Layout() {
       <main className="flex-1 pt-28 md:pt-32 pb-12">
         <Outlet />
       </main>
-      <footer className="mt-auto text-slate-200 pt-8 pb-5 text-[11px] md:text-sm bg-[linear-gradient(135deg,#073255_0%,#0a4f7d_55%,#0e659c_100%)] dark:bg-[linear-gradient(135deg,#041a2e_0%,#052f49_55%,#073f60_100%)]">
+      <footer className="mt-auto pt-8 pb-5 text-[11px] md:text-sm bg-slate-900/95 dark:bg-[linear-gradient(135deg,#041a2e_0%,#052f49_55%,#073f60_100%)] text-slate-200 dark:text-slate-200 border-t border-slate-200/70 dark:border-slate-700/70">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           <div className="space-y-4 max-w-md">
-            <h3 className="text-white font-semibold text-sm md:text-base tracking-wide">
+            <h3 className="font-semibold text-sm md:text-base tracking-wide text-slate-100 dark:text-white">
               Transsion Holdings Ethiopia
             </h3>
-            <p className="leading-relaxed text-slate-100/70">
+            <p className="leading-relaxed text-slate-300 dark:text-slate-100/70">
               Delivering accessible smart technology and services that empower
               communities across Africa.
             </p>

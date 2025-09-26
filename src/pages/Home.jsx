@@ -36,52 +36,52 @@ export default function Home() {
       </section>
       <div className="space-y-24">
         <Container className="space-y-24">
-        <section className="space-y-6" id="who">
-          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight flex items-center gap-3">
-            <span className="h-8 w-1 rounded bg-gradient-to-b from-cyan-500 to-blue-500" />
-            Who We Are
-          </h2>
-          <p className="text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
-            Transsion Holdings Ethiopia is part of Transsion Holdings, a leader
-            in smart devices and mobile services for Africa. We bring TECNO,
-            Infinix, itel, Syinix, and Oraimo to millions, empowering
-            communities with reliable technology solutions.
-          </p>
-          <a
-            href="/about"
-            className="inline-flex items-center gap-2 text-cyan-600 dark:text-cyan-400 font-medium hover:gap-3 transition-all"
-          >
-            Learn More <span aria-hidden>→</span>
-          </a>
-        </section>
-        <section className="space-y-8">
-          <h2 className="text-2xl md:text-3xl font-semibold tracking-tight flex items-center gap-3">
-            <span className="h-8 w-1 rounded bg-gradient-to-b from-cyan-500 to-blue-500" />
-            Our Brands
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
-            {[
-              { file: "tecbrand.png", alt: "TECNO" },
-              { file: "infbrand.png", alt: "Infinix" },
-              { file: "itelbrand.png", alt: "itel" },
-              { file: "syibrand.png", alt: "Syinix" },
-              { file: "orabrand.png", alt: "Oraimo" },
-              { file: "carlbrand.png", alt: "Carlcare" },
-            ].map((b) => (
-              <div
-                key={b.file}
-                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 p-6 shadow-lg ring-1 ring-white/10 hover:ring-cyan-300/60 transition dark:from-slate-800 dark:via-slate-700 dark:to-slate-600"
-              >
-                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,#0ea5e9_0%,transparent_55%)] opacity-0 group-hover:opacity-40 transition-opacity" />
-                <ResponsiveImage
-                  file={b.file}
-                  alt={b.alt}
-                  className="relative mx-auto h-14 w-auto object-contain drop-shadow-[0_6px_18px_rgba(14,165,233,0.45)]"
-                />
-              </div>
-            ))}
-          </div>
-        </section>
+          <section className="space-y-6" id="who">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight flex items-center gap-3">
+              <span className="h-8 w-1 rounded bg-gradient-to-b from-cyan-500 to-blue-500" />
+              Who We Are
+            </h2>
+            <p className="text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
+              Transsion Holdings Ethiopia is part of Transsion Holdings, a
+              leader in smart devices and mobile services for Africa. We bring
+              TECNO, Infinix, itel, Syinix, and Oraimo to millions, empowering
+              communities with reliable technology solutions.
+            </p>
+            <a
+              href="/about"
+              className="inline-flex items-center gap-2 text-cyan-600 dark:text-cyan-400 font-medium hover:gap-3 transition-all"
+            >
+              Learn More <span aria-hidden>→</span>
+            </a>
+          </section>
+          <section className="space-y-8">
+            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight flex items-center gap-3">
+              <span className="h-8 w-1 rounded bg-gradient-to-b from-cyan-500 to-blue-500" />
+              Our Brands
+            </h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+              {[
+                { file: "tecbrand.png", alt: "TECNO" },
+                { file: "infbrand.png", alt: "Infinix" },
+                { file: "itelbrand.png", alt: "itel" },
+                { file: "syibrand.png", alt: "Syinix" },
+                { file: "orabrand.png", alt: "Oraimo" },
+                { file: "carlbrand.png", alt: "Carlcare" },
+              ].map((b) => (
+                <div
+                  key={b.file}
+                  className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 p-6 shadow-lg ring-1 ring-white/10 hover:ring-cyan-300/60 transition dark:from-slate-800 dark:via-slate-700 dark:to-slate-600"
+                >
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,#0ea5e9_0%,transparent_55%)] opacity-0 group-hover:opacity-40 transition-opacity" />
+                  <ResponsiveImage
+                    file={b.file}
+                    alt={b.alt}
+                    className="relative mx-auto h-14 w-auto object-contain drop-shadow-[0_6px_18px_rgba(14,165,233,0.45)]"
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
         </Container>
       </div>
     </div>
