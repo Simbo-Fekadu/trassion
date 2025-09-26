@@ -96,15 +96,16 @@ function Layout() {
           : "text-white/80 hover:text-white hover:bg-white/10"
       }`;
     }
+    // Light mode on brand bar (#33A1E0) -> use white text, subtle active pill.
     return `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
       isActive
-        ? "text-cyan-700 bg-cyan-50 ring-1 ring-cyan-100"
-        : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+        ? "bg-white/25 text-white shadow-inner"
+        : "text-white/90 hover:text-white hover:bg-white/15"
     }`;
   };
 
   return (
-    <div className="min-h-screen w-full flex flex-col font-sans text-slate-800 dark:text-slate-100 bg-[linear-gradient(180deg,#ffffff_0%,#f5f9fc_55%,#eaf2f8_100%)] dark:bg-[linear-gradient(180deg,#061529_0%,#071a33_55%,#05101f_100%)] selection:bg-cyan-500/30 transition-colors">
+    <div className="min-h-screen w-full flex flex-col font-sans text-slate-800 dark:text-slate-100 bg-[linear-gradient(180deg,#f0fafe_0%,#ffffff_50%,#e4f5fc_100%)] dark:bg-[linear-gradient(180deg,#061529_0%,#071a33_55%,#05101f_100%)] selection:bg-cyan-500/30 transition-colors">
       {/* Backdrop */}
       <div
         className={`md:hidden fixed inset-0 z-40 transition-opacity duration-300 ${
@@ -120,7 +121,7 @@ function Layout() {
         } ${
           dark
             ? "bg-[linear-gradient(90deg,#021223_0%,#032b52_55%,#03406f_100%)] shadow"
-            : "bg-white/90 border-b border-slate-200/70 shadow-sm supports-[backdrop-filter]:bg-white/70"
+            : "bg-[#33A1E0] shadow-md"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-4">
@@ -135,10 +136,10 @@ function Layout() {
               className="h-10 w-auto drop-shadow-sm group-hover:scale-105 transition-transform"
             />
             <div className="leading-tight">
-              <p className="text-white font-semibold text-sm md:text-base group-hover:text-cyan-100 transition-colors">
+              <p className="text-white font-semibold text-sm md:text-base group-hover:text-white transition-colors">
                 Transsion Holdings Ethiopia
               </p>
-              <p className="text-cyan-200 text-[10px] md:text-xs tracking-wide uppercase drop-shadow">
+              <p className="text-white/80 text-[10px] md:text-xs tracking-wide uppercase drop-shadow">
                 Together We Can
               </p>
             </div>
@@ -156,7 +157,11 @@ function Layout() {
             ))}
             <button
               onClick={() => setDark((d) => !d)}
-              className="ml-2 inline-flex h-9 w-9 items-center justify-center rounded-md border dark:border-white/20 border-slate-300 text-slate-600 dark:text-white/80 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 transition"
+              className={`ml-2 inline-flex h-9 w-9 items-center justify-center rounded-md border transition ${
+                dark
+                  ? "border-white/20 text-white/80 hover:text-white hover:bg-white/10"
+                  : "border-white/35 text-white/80 hover:text-white hover:bg-white/20"
+              }`}
               aria-label="Toggle dark mode"
               title={dark ? "Switch to light mode" : "Switch to dark mode"}
             >
@@ -191,7 +196,11 @@ function Layout() {
           <div className="flex items-center gap-2 md:hidden">
             <button
               onClick={() => setDark((d) => !d)}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-md border dark:border-white/20 border-slate-300 text-slate-600 dark:text-white/80 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 transition"
+              className={`inline-flex h-9 w-9 items-center justify-center rounded-md border transition ${
+                dark
+                  ? "border-white/20 text-white/80 hover:text-white hover:bg-white/10"
+                  : "border-white/35 text-white/80 hover:text-white hover:bg-white/20"
+              }`}
               aria-label="Toggle dark mode"
             >
               {dark ? (
@@ -254,7 +263,7 @@ function Layout() {
           } ${
             dark
               ? "bg-[linear-gradient(180deg,#052038_0%,#063255_45%,#041627_100%)] text-slate-100"
-              : "bg-white text-slate-800 border-l border-slate-200"
+              : "bg-[#33A1E0] text-white"
           }`}
         >
           {navItems.map((n) => (
@@ -268,8 +277,8 @@ function Layout() {
                       ? "bg-cyan-500/20 text-cyan-300"
                       : "text-slate-100 hover:bg-white/10"
                     : isActive
-                    ? "bg-cyan-50 text-cyan-700 ring-1 ring-cyan-100"
-                    : "text-slate-700 hover:bg-slate-100"
+                    ? "bg-white/25 text-white"
+                    : "text-white/85 hover:bg-white/15"
                 }`
               }
               onClick={() => setOpen(false)}
@@ -277,10 +286,10 @@ function Layout() {
               {n.label}
             </NavLink>
           ))}
-          <div className="mt-6 border-t border-slate-200 dark:border-white/10 pt-4 flex items-center justify-between">
+          <div className={`mt-6 border-t pt-4 flex items-center justify-between ${dark ? "border-white/10" : "border-white/30"}`}>
             <button
               onClick={() => setDark((d) => !d)}
-              className="inline-flex items-center gap-2 text-sm font-medium text-slate-700 hover:text-slate-900 dark:text-white/80 dark:hover:text-white"
+              className={`inline-flex items-center gap-2 text-sm font-medium ${dark ? "text-white/80 hover:text-white" : "text-white/85 hover:text-white"}`}
             >
               {dark ? (
                 <span className="flex items-center gap-1">
@@ -322,28 +331,12 @@ function Layout() {
       <main className="flex-1 pt-28 md:pt-32 pb-12">
         <Outlet />
       </main>
-      <footer className="mt-auto pt-8 pb-5 text-[11px] md:text-sm bg-slate-900/95 dark:bg-[linear-gradient(135deg,#041a2e_0%,#052f49_55%,#073f60_100%)] text-slate-200 dark:text-slate-200 border-t border-slate-200/70 dark:border-slate-700/70">
+      <footer className="mt-auto pt-8 pb-5 text-[11px] md:text-sm bg-[#33A1E0] dark:bg-[linear-gradient(135deg,#041a2e_0%,#052f49_55%,#073f60_100%)] text-white dark:text-slate-200 border-t border-[#33A1E0] dark:border-slate-700/70">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           <div className="space-y-4 max-w-md">
-            <h3 className="font-semibold text-sm md:text-base tracking-wide text-slate-100 dark:text-white">
-              Transsion Holdings Ethiopia
-            </h3>
-            <p className="leading-relaxed text-slate-300 dark:text-slate-100/70">
-              Delivering accessible smart technology and services that empower
-              communities across Africa.
-            </p>
-            <div className="flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-slate-300/80">
-              {["TECNO", "Infinix", "itel", "Syinix", "Oraimo", "Carlcare"].map(
-                (b) => (
-                  <span
-                    key={b}
-                    className="after:mx-1 after:text-slate-500 after:content-['•'] last:after:content-none"
-                  >
-                    {b}
-                  </span>
-                )
-              )}
-            </div>
+            <h3 className="font-semibold text-sm md:text-base tracking-wide">Transsion Holdings Ethiopia</h3>
+            <p className="leading-relaxed text-white/85 dark:text-slate-100/70">Delivering accessible smart technology and services that empower communities across Africa.</p>
+            <div className="flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-white/70">{["TECNO","Infinix","itel","Syinix","Oraimo","Carlcare"].map(b=> <span key={b} className="after:mx-1 after:text-white/50 after:content-['•'] last:after:content-none">{b}</span>)}</div>
           </div>
           <div className="flex flex-col gap-4 md:items-end">
             <ul className="flex gap-3" aria-label="Social media">
@@ -370,7 +363,7 @@ function Layout() {
                     href={s.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-2 text-white/70 hover:text-white transition-colors"
+                    className="p-2 text-white/75 hover:text-white transition-colors"
                     aria-label={s.label}
                   >
                     <Icon name={s.n} className="w-5 h-5" />
@@ -378,25 +371,21 @@ function Layout() {
                 </li>
               ))}
             </ul>
-            <div className="flex items-center gap-4 text-white/45">
-              <a href="/privacy" className="hover:text-cyan-300">
-                Privacy
-              </a>
-              <span className="h-3 w-px bg-white/15" />
-              <a href="/terms" className="hover:text-cyan-300">
-                Terms
-              </a>
+            <div className="flex items-center gap-4 text-white/60 dark:text-white/45">
+              <a href="/privacy" className="hover:text-white">Privacy</a>
+              <span className="h-3 w-px bg-white/35 dark:bg-white/15" />
+              <a href="/terms" className="hover:text-white">Terms</a>
             </div>
           </div>
         </div>
-        <div className="mt-6 mx-auto max-w-7xl px-4 pt-4 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-[10px] md:text-[11px] text-white/55 tracking-wide">
+        <div className="mt-6 mx-auto max-w-7xl px-4 pt-4 border-t border-white/30 dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-[10px] md:text-[11px] text-white/70 dark:text-white/55 tracking-wide">
           <span>
             © {new Date().getFullYear()} Transsion Holdings Ethiopia. All rights
             reserved.
           </span>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="uppercase tracking-wide text-white/40 hover:text-cyan-300 transition text-[10px]"
+            className="uppercase tracking-wide text-white/60 hover:text-white transition text-[10px]"
           >
             Back to top ↑
           </button>
