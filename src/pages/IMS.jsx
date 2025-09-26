@@ -21,7 +21,7 @@ export default function IMS() {
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
             Integrated Management System (IMS)
           </h1>
-          <p className="text-slate-600 dark:text-slate-300 max-w-3xl">
+          <p className="text-white/90 dark:text-slate-300 max-w-3xl">
             Certified under ISO 9001, we drive quality, safety, environmental
             responsibility and continuous improvement into every operational
             layer.

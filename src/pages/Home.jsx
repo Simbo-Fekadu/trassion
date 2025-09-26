@@ -41,7 +41,7 @@ export default function Home() {
               <span className="h-8 w-1 rounded bg-brand dark:bg-brand-dark" />
               Who We Are
             </h2>
-            <p className="text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
+            <p className="text-white/90 dark:text-slate-300 max-w-3xl leading-relaxed">
               Transsion Holdings Ethiopia is part of Transsion Holdings, a
               leader in smart devices and mobile services for Africa. We bring
               TECNO, Infinix, itel, Syinix, and Oraimo to millions, empowering

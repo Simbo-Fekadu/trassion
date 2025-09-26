@@ -33,7 +33,7 @@ export default function Contact() {
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
             Contact Us
           </h1>
-          <p className="text-slate-600 dark:text-slate-300">
+          <p className="text-white/90 dark:text-slate-300">
             We are here to help. Reach out via any of the official channels
             below.
           </p>

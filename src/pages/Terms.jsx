@@ -7,7 +7,7 @@ export default function Terms() {
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-brand dark:text-cyan-300">
             Terms of Use
           </h1>
-          <p className="text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
+          <p className="text-white/90 dark:text-slate-300 max-w-3xl leading-relaxed">
             By using this website, you agree to comply with our terms and
             conditions. Please review them regularly to stay informed about our
             policies.

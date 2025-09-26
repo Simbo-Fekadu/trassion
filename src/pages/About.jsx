@@ -25,7 +25,7 @@ export default function About() {
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-brand dark:text-cyan-300">
               Welcome to Transsion Holdings Ethiopia
             </h1>
-            <p className="leading-relaxed text-slate-600 dark:text-slate-300">
+            <p className="leading-relaxed text-white/90 dark:text-slate-300">
               We deliver innovative and affordable technology solutions across
               Africa, connecting communities and empowering people.
             </p>
@@ -35,7 +35,7 @@ export default function About() {
 
       <Container className="space-y-10">
         <div className={sectionTitle}>{gradientBar} Our Mission</div>
-        <p className="text-slate-600 dark:text-slate-300 max-w-3xl">
+        <p className="text-white/90 dark:text-slate-300 max-w-3xl">
           To empower individuals and communities across Africa by connecting
           them through innovative mobile and electronic products.
         </p>
@@ -76,7 +76,7 @@ export default function About() {
 
       <Container className="space-y-10">
         <div className={sectionTitle}>{gradientBar} Departments & Roles</div>
-        <p className="text-slate-600 dark:text-slate-300 max-w-4xl">
+        <p className="text-white/90 dark:text-slate-300 max-w-4xl">
           Our strength comes from specialized teams working together to deliver
           innovation, quality, and community impact.
         </p>

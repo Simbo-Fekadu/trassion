@@ -7,7 +7,7 @@ export default function Privacy() {
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-brand dark:text-cyan-300">
             Privacy Policy
           </h1>
-          <p className="text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
+          <p className="text-white/90 dark:text-slate-300 max-w-3xl leading-relaxed">
             Your privacy is important to us. We handle your personal information
             responsibly and securely, and never share it without your consent.
           </p>

@@ -61,7 +61,7 @@ export default function Products() {
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-brand dark:text-cyan-300">
             Our Products
           </h1>
-          <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+          <p className="text-white/90 dark:text-slate-300 leading-relaxed">
             We proudly distribute and support leading brands: TECNO, Infinix,
             itel, Syinix, Oraimo and more—bringing innovation, reliability and
             accessibility to diverse users.
