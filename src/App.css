@@ -1,0 +1,11 @@
+/* Purged default Vite scaffold styles to allow full-bleed layout. */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+/* If any legacy component still uses these classes they won't break, but
+   we intentionally remove decorative effects to keep styling controlled
+   by Tailwind utility classes in the React components. */

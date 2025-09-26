@@ -1,6 +1,10 @@
+import ResponsiveImage from "../components/ResponsiveImage";
+import Container from "../components/Container";
+
 export default function Market() {
   return (
-    <div className="max-w-6xl mx-auto px-4 space-y-16">
+    <div className="space-y-16">
+      <Container className="space-y-16">
       <header className="space-y-6">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
           Our Market Presence
@@ -13,8 +17,7 @@ export default function Market() {
           growth.
         </p>
       </header>
-
-      <section className="grid md:grid-cols-2 gap-10 items-start">
+      <section className="grid md:grid-cols-2 gap-10 items-start max-w-6xl mx-auto">
         <div className="space-y-4">
           <h2 className="text-xl font-semibold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
             Customer Support
@@ -32,16 +35,16 @@ export default function Market() {
               key={img}
               className="rounded-xl overflow-hidden ring-1 ring-slate-200/60 dark:ring-slate-700 bg-slate-100 dark:bg-slate-900/40"
             >
-              <img
-                src={`/images/${img}`}
+              <ResponsiveImage
+                file={img}
                 alt={img}
                 className="object-cover w-full h-40"
-                loading="lazy"
               />
             </div>
           ))}
         </div>
       </section>
+      </Container>
     </div>
   );
 }

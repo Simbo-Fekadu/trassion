@@ -1,3 +1,5 @@
+import ResponsiveImage from "../components/ResponsiveImage";
+import Container from "../components/Container";
 const sectionTitle =
   "text-xl md:text-2xl font-semibold tracking-tight flex items-center gap-2";
 const gradientBar = (
@@ -6,14 +8,16 @@ const gradientBar = (
 
 export default function About() {
   return (
-    <div className="max-w-7xl mx-auto px-4 space-y-20">
+    <div className="space-y-20">
+      <Container>
       <section className="grid md:grid-cols-2 gap-10 items-center">
-        <img
-          src="/images/TRANSSIONHOME.png"
-          alt="Transsion Holdings Ethiopia"
-          className="rounded-xl shadow object-cover w-full max-h-[360px] bg-slate-200 dark:bg-slate-800"
-          loading="lazy"
-        />
+        <div className="rounded-xl shadow ring-1 ring-slate-200/70 dark:ring-slate-700 overflow-hidden bg-slate-100 dark:bg-slate-900/40">
+          <ResponsiveImage
+            file="TRANSSIONHOME.png"
+            alt="Transsion Holdings Ethiopia"
+            className="object-cover w-full max-h-[360px]"
+          />
+        </div>
         <div className="space-y-4">
           <h1 className="text-3xl md:text-4xl font-bold tracking-tight bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
             Welcome to Transsion Holdings Ethiopia
@@ -24,8 +28,9 @@ export default function About() {
           </p>
         </div>
       </section>
+      </Container>
 
-      <section className="space-y-10">
+      <section className="space-y-10 px-4 md:px-8 max-w-7xl mx-auto">
         <div className={sectionTitle}>{gradientBar} Our Mission</div>
         <p className="text-slate-600 dark:text-slate-300 max-w-3xl">
           To empower individuals and communities across Africa by connecting
@@ -66,7 +71,7 @@ export default function About() {
         images={["an.png", "ann.png", "annu.png"]}
       />
 
-      <section className="space-y-10">
+      <section className="space-y-10 px-4 md:px-8 max-w-7xl mx-auto">
         <div className={sectionTitle}>{gradientBar} Departments & Roles</div>
         <p className="text-slate-600 dark:text-slate-300 max-w-4xl">
           Our strength comes from specialized teams working together to deliver
@@ -115,10 +120,9 @@ function GalleryBlock({ title, text, images }) {
             key={img}
             className="relative rounded-xl overflow-hidden ring-1 ring-slate-200/60 dark:ring-slate-700 bg-slate-100 dark:bg-slate-900/40 group"
           >
-            <img
-              src={`/images/${img}`}
+            <ResponsiveImage
+              file={img}
               alt={title}
-              loading="lazy"
               className="h-52 w-full object-cover object-center group-hover:scale-[1.03] transition-transform"
             />
           </div>

@@ -1,3 +1,6 @@
+import ResponsiveImage from "../components/ResponsiveImage";
+import Container from "../components/Container";
+
 const products = [
   {
     title: "Tecno Spark 9",
@@ -52,7 +55,8 @@ const products = [
 
 export default function Products() {
   return (
-    <div className="max-w-7xl mx-auto px-4 space-y-14">
+    <div className="space-y-14">
+      <Container className="space-y-14">
       <header className="space-y-4 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
           Our Products
@@ -63,7 +67,6 @@ export default function Products() {
           accessibility to diverse users.
         </p>
       </header>
-
       <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {products.map((p) => (
           <article
@@ -74,11 +77,10 @@ export default function Products() {
               {p.tag}
             </div>
             <div className="aspect-square w-full bg-slate-100 dark:bg-slate-900/40 flex items-center justify-center overflow-hidden">
-              <img
-                src={`/images/${p.img}`}
+              <ResponsiveImage
+                file={p.img}
                 alt={p.title}
                 className="object-contain w-full h-full p-4 group-hover:scale-105 transition-transform"
-                loading="lazy"
               />
             </div>
             <div className="p-5 flex flex-col gap-3 flex-1">
@@ -100,6 +102,7 @@ export default function Products() {
           </article>
         ))}
       </div>
+      </Container>
     </div>
   );
 }

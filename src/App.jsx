@@ -7,6 +7,8 @@ import Market from "./pages/Market.jsx";
 import CSR from "./pages/CSR.jsx";
 import IMS from "./pages/IMS.jsx";
 import Contact from "./pages/Contact.jsx";
+import Privacy from "./pages/Privacy.jsx";
+import Terms from "./pages/Terms.jsx";
 import "./App.css";
 
 export default function App() {
@@ -20,6 +22,8 @@ export default function App() {
         <Route path="/csr" element={<CSR />} />
         <Route path="/ims" element={<IMS />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
       </Route>
     </Routes>
   );

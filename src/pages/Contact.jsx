@@ -20,12 +20,15 @@ const infoItems = [
 ];
 
 import { useState } from "react";
+import Container from "../components/Container";
+import ResponsiveImage from "../components/ResponsiveImage"; // in case we add decorative images later
 
 export default function Contact() {
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
   return (
-    <div className="max-w-6xl mx-auto px-4 space-y-16">
+    <div className="space-y-16">
+      <Container className="space-y-16">
       <header className="space-y-4 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
           Contact Us
@@ -34,10 +37,10 @@ export default function Contact() {
           We are here to help. Reach out via any of the official channels below.
         </p>
       </header>
-
-      <section className="grid md:grid-cols-2 gap-10">
+      <section className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
         <div className="space-y-6">
-          <h2 className="text-xl font-semibold text-cyan-600 dark:text-cyan-400">
+          <h2 className="text-xl md:text-2xl font-semibold tracking-tight flex items-center gap-2">
+            <span className="h-6 w-1 rounded bg-gradient-to-b from-cyan-500 to-blue-500" />{" "}
             Quick Contacts
           </h2>
           <ul className="space-y-4">
@@ -97,7 +100,8 @@ export default function Contact() {
           </div>
         </div>
         <div className="space-y-6">
-          <h2 className="text-xl font-semibold text-cyan-600 dark:text-cyan-400">
+          <h2 className="text-xl md:text-2xl font-semibold tracking-tight flex items-center gap-2">
+            <span className="h-6 w-1 rounded bg-gradient-to-b from-cyan-500 to-blue-500" />{" "}
             Send Us a Message
           </h2>
           <form
@@ -109,8 +113,10 @@ export default function Contact() {
               setStatus("submitting");
               setMessage("");
               try {
-                // Placeholder endpoint - replace with your API route or service (e.g. Formspree)
-                const res = await fetch("/api/contact", {
+                // Replace FORM_ENDPOINT with your Formspree endpoint e.g. https://formspree.io/f/xxxxx
+                const FORM_ENDPOINT =
+                  import.meta.env.VITE_FORMSPREE_ENDPOINT || "/api/contact";
+                const res = await fetch(FORM_ENDPOINT, {
                   method: "POST",
                   headers: { "Content-Type": "application/json" },
                   body: JSON.stringify(data),
@@ -161,6 +167,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
+      </Container>
     </div>
   );
 }

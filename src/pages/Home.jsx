@@ -1,36 +1,8 @@
-// Reusable responsive image component assuming optimized variants naming: name-320w.webp, name-512w.webp, etc.
-function ResponsiveImage({
-  file,
-  alt,
-  className = "",
-  widthHints = [320, 512, 768, 1024, 1280],
-}) {
-  const base = file.replace(/\.[^.]+$/, "");
-  const webpSrcSet = widthHints
-    .map((w) => `/images/${base}-${w}w.webp ${w}w`)
-    .join(", ");
-  const fallback = `/images/${file}`; // original if variants missing
-  // choose a mid-size as default src for faster LCP
-  const defaultSrc = `/images/${base}-768w.webp`;
-  return (
-    <picture>
-      <source type="image/webp" srcSet={webpSrcSet} />
-      <img
-        loading="lazy"
-        src={defaultSrc}
-        onError={(e) => {
-          if (e.currentTarget.src !== fallback) e.currentTarget.src = fallback;
-        }}
-        alt={alt}
-        className={className}
-      />
-    </picture>
-  );
-}
+import ResponsiveImage from "../components/ResponsiveImage";
 
 export default function Home() {
   return (
-    <div className="space-y-24">
+    <div className="space-y-24 w-full">
       {/* Full-bleed hero without side white margins */}
       <section className="relative w-full aspect-[16/7] bg-slate-900">
         <div className="absolute inset-0 overflow-hidden">
@@ -61,7 +33,7 @@ export default function Home() {
           </a>
         </div>
       </section>
-      <div className="max-w-7xl mx-auto px-4 space-y-24">
+      <div className="px-0 space-y-24">
         <section className="space-y-6" id="who">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight flex items-center gap-3">
             <span className="h-8 w-1 rounded bg-gradient-to-b from-cyan-500 to-blue-500" />
@@ -80,7 +52,7 @@ export default function Home() {
             Learn More <span aria-hidden>→</span>
           </a>
         </section>
-        <section className="space-y-8">
+        <section className="space-y-8 px-4 md:px-8 max-w-7xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight flex items-center gap-3">
             <span className="h-8 w-1 rounded bg-gradient-to-b from-cyan-500 to-blue-500" />
             Our Brands
@@ -96,12 +68,13 @@ export default function Home() {
             ].map((b) => (
               <div
                 key={b.file}
-                className="group relative rounded-xl bg-white p-4 shadow hover:shadow-lg ring-1 ring-slate-200/60 hover:ring-cyan-300/50 transition dark:bg-slate-800/60 dark:ring-slate-700"
+                className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 p-6 shadow-lg ring-1 ring-white/10 hover:ring-cyan-300/60 transition dark:from-slate-800 dark:via-slate-700 dark:to-slate-600"
               >
+                <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,#0ea5e9_0%,transparent_55%)] opacity-0 group-hover:opacity-40 transition-opacity" />
                 <ResponsiveImage
                   file={b.file}
                   alt={b.alt}
-                  className="mx-auto h-14 w-auto object-contain opacity-80 group-hover:opacity-100 transition"
+                  className="relative mx-auto h-14 w-auto object-contain drop-shadow-[0_6px_18px_rgba(14,165,233,0.45)]"
                 />
               </div>
             ))}
