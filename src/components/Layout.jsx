@@ -105,7 +105,7 @@ function Layout() {
   };
 
   return (
-  <div className="app-root min-h-screen w-full flex flex-col font-sans selection:bg-white/30 dark:selection:bg-cyan-500/30">
+    <div className="app-root min-h-screen w-full flex flex-col font-sans selection:bg-white/30 dark:selection:bg-cyan-500/30">
       {/* Backdrop */}
       <div
         className={`md:hidden fixed inset-0 z-40 transition-opacity duration-300 ${
