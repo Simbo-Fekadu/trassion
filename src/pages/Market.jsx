@@ -19,7 +19,7 @@ export default function Market() {
         </header>
         <section className="grid md:grid-cols-2 gap-10 items-start max-w-6xl mx-auto">
           <div className="space-y-4">
-            <h2 className="text-xl font-semibold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+            <h2 className="text-xl font-semibold text-brand dark:text-cyan-300">
               Customer Support
             </h2>
             <p className="text-slate-600 dark:text-slate-300 leading-relaxed">

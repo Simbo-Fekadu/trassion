@@ -34,12 +34,12 @@ export default function About() {
       </Container>
 
       <Container className="space-y-10">
-  <div className={sectionTitle}>{gradientBar} Our Mission</div>
+        <div className={sectionTitle}>{gradientBar} Our Mission</div>
         <p className="text-slate-600 dark:text-slate-300 max-w-3xl">
           To empower individuals and communities across Africa by connecting
           them through innovative mobile and electronic products.
         </p>
-  <div className={sectionTitle}>{gradientBar} Our Values</div>
+        <div className={sectionTitle}>{gradientBar} Our Values</div>
         <ul className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 text-sm">
           {[
             "Customer-centric approach",

@@ -28,7 +28,7 @@ export default function Home() {
           </p>
           <a
             href="/about"
-            className="mt-7 inline-block bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold px-10 py-4 rounded-full shadow hover:shadow-lg hover:from-cyan-400 hover:to-blue-400 transition text-sm md:text-base"
+            className="mt-7 inline-block bg-brand text-white font-semibold px-10 py-4 rounded-full shadow hover:shadow-lg hover:bg-brand-light transition text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-white/60 focus:ring-offset-2 focus:ring-offset-slate-900"
           >
             Discover More
           </a>
@@ -38,7 +38,7 @@ export default function Home() {
         <Container className="space-y-24">
           <section className="space-y-6" id="who">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight flex items-center gap-3">
-              <span className="h-8 w-1 rounded bg-gradient-to-b from-cyan-500 to-blue-500" />
+              <span className="h-8 w-1 rounded bg-brand dark:bg-brand-dark" />
               Who We Are
             </h2>
             <p className="text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
@@ -49,14 +49,14 @@ export default function Home() {
             </p>
             <a
               href="/about"
-              className="inline-flex items-center gap-2 text-cyan-600 dark:text-cyan-400 font-medium hover:gap-3 transition-all"
+              className="inline-flex items-center gap-2 text-brand dark:text-cyan-300 font-medium hover:gap-3 transition-all hover:text-brand-light"
             >
               Learn More <span aria-hidden>→</span>
             </a>
           </section>
           <section className="space-y-8">
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight flex items-center gap-3">
-              <span className="h-8 w-1 rounded bg-gradient-to-b from-cyan-500 to-blue-500" />
+              <span className="h-8 w-1 rounded bg-brand dark:bg-brand-dark" />
               Our Brands
             </h2>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
@@ -70,13 +70,13 @@ export default function Home() {
               ].map((b) => (
                 <div
                   key={b.file}
-                  className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 p-6 shadow-lg ring-1 ring-white/10 hover:ring-cyan-300/60 transition dark:from-slate-800 dark:via-slate-700 dark:to-slate-600"
+                  className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700 p-6 shadow-lg ring-1 ring-white/10 hover:ring-brand/60 transition dark:from-slate-800 dark:via-slate-700 dark:to-slate-600"
                 >
-                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,#0ea5e9_0%,transparent_55%)] opacity-0 group-hover:opacity-40 transition-opacity" />
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,#33A1E0_0%,transparent_55%)] opacity-0 group-hover:opacity-40 transition-opacity" />
                   <ResponsiveImage
                     file={b.file}
                     alt={b.alt}
-                    className="relative mx-auto h-14 w-auto object-contain drop-shadow-[0_6px_18px_rgba(14,165,233,0.45)]"
+                    className="relative mx-auto h-14 w-auto object-contain drop-shadow-[0_6px_18px_rgba(51,161,224,0.45)]"
                   />
                 </div>
               ))}

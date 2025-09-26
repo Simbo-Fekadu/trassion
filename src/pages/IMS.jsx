@@ -1,7 +1,7 @@
 const Section = ({ title, children }) => (
   <section className="space-y-5">
     <div className="flex items-center gap-2">
-      <span className="h-6 w-1 rounded bg-gradient-to-b from-cyan-500 to-blue-500" />
+      <span className="h-6 w-1 rounded bg-brand dark:bg-brand-dark" />
       <h2 className="text-xl md:text-2xl font-semibold tracking-tight">
         {title}
       </h2>
@@ -80,12 +80,12 @@ export default function IMS() {
             </p>
           </Section>
 
-          <div className="rounded-2xl border border-cyan-500/30 bg-cyan-500/5 dark:bg-cyan-400/10 p-6 flex flex-col gap-3 shadow-sm">
+          <div className="rounded-2xl border border-brand/40 bg-brand/5 dark:bg-brand-dark/30 p-6 flex flex-col gap-3 shadow-sm">
             <div className="flex items-center gap-3">
               <span className="text-3xl" role="img" aria-label="certificate">
                 🎖️
               </span>
-              <h3 className="text-xl font-semibold text-cyan-700 dark:text-cyan-300">
+              <h3 className="text-xl font-semibold text-brand dark:text-cyan-300">
                 ISO 9001:2015 Certified
               </h3>
             </div>

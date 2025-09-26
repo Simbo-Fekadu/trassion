@@ -73,7 +73,7 @@ export default function Products() {
               key={p.title}
               className="relative rounded-2xl overflow-hidden border border-slate-200/70 dark:border-slate-700 bg-white/70 dark:bg-slate-800/60 shadow-sm hover:shadow-md transition flex flex-col group"
             >
-              <div className="product-top-text absolute top-2 left-2 text-[10px] uppercase bg-cyan-600 text-white px-2 py-1 rounded tracking-wide font-medium group-hover:bg-cyan-500">
+              <div className="product-top-text absolute top-2 left-2 text-[10px] uppercase bg-brand text-white px-2 py-1 rounded tracking-wide font-medium group-hover:bg-brand-light">
                 {p.tag}
               </div>
               <div className="aspect-square w-full bg-slate-100 dark:bg-slate-900/40 flex items-center justify-center overflow-hidden">
@@ -84,7 +84,7 @@ export default function Products() {
                 />
               </div>
               <div className="p-5 flex flex-col gap-3 flex-1">
-                <h3 className="font-semibold text-slate-800 dark:text-slate-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-400">
+                <h3 className="font-semibold text-slate-800 dark:text-slate-100 group-hover:text-brand dark:group-hover:text-cyan-300">
                   {p.title}
                 </h3>
                 <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed flex-1">
@@ -94,7 +94,7 @@ export default function Products() {
                   href={p.link}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1 text-sm font-medium text-cyan-600 dark:text-cyan-400 hover:gap-2 transition-all"
+                  className="inline-flex items-center gap-1 text-sm font-medium text-brand dark:text-cyan-300 hover:gap-2 transition-all hover:text-brand-light"
                 >
                   Learn More <span aria-hidden>→</span>
                 </a>

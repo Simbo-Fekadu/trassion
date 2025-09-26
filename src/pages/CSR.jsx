@@ -1,7 +1,7 @@
 const Section = ({ title, children }) => (
   <section className="space-y-5">
     <div className="flex items-center gap-2">
-      <span className="h-6 w-1 rounded bg-gradient-to-b from-cyan-500 to-blue-500" />
+      <span className="h-6 w-1 rounded bg-brand dark:bg-brand-dark" />
       <h2 className="text-xl md:text-2xl font-semibold tracking-tight">
         {title}
       </h2>

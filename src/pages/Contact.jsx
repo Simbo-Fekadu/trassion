@@ -41,8 +41,7 @@ export default function Contact() {
         <section className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
           <div className="space-y-6">
             <h2 className="text-xl md:text-2xl font-semibold tracking-tight flex items-center gap-2">
-              <span className="h-6 w-1 rounded bg-gradient-to-b from-cyan-500 to-blue-500" />{" "}
-              Quick Contacts
+              <span className="h-6 w-1 rounded bg-brand dark:bg-brand-dark" /> Quick Contacts
             </h2>
             <ul className="space-y-4">
               {infoItems.map((item) => (
@@ -57,7 +56,7 @@ export default function Contact() {
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="text-cyan-600 dark:text-cyan-400 hover:underline break-all"
+                        className="text-brand dark:text-cyan-300 hover:underline break-all"
                       >
                         {item.value}
                       </a>
@@ -102,8 +101,7 @@ export default function Contact() {
           </div>
           <div className="space-y-6">
             <h2 className="text-xl md:text-2xl font-semibold tracking-tight flex items-center gap-2">
-              <span className="h-6 w-1 rounded bg-gradient-to-b from-cyan-500 to-blue-500" />{" "}
-              Send Us a Message
+              <span className="h-6 w-1 rounded bg-brand dark:bg-brand-dark" /> Send Us a Message
             </h2>
             <form
               className="grid gap-4"
@@ -151,7 +149,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                className="justify-center inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold px-6 py-3 hover:from-cyan-400 hover:to-blue-400 shadow-sm hover:shadow transition text-sm disabled:opacity-60 disabled:cursor-not-allowed"
+                className="justify-center inline-flex items-center gap-2 rounded-md bg-brand text-white font-semibold px-6 py-3 hover:bg-brand-light shadow-sm hover:shadow transition text-sm disabled:opacity-60 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-brand/60 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-slate-900"
               >
                 {status === "submitting" ? "Sending..." : "Send Message"}
               </button>

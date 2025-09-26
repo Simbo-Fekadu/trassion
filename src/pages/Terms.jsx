@@ -4,7 +4,7 @@ export default function Terms() {
     <div className="space-y-12">
       <Container size="md" className="space-y-12">
         <header className="space-y-4 pt-2">
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-brand dark:text-cyan-300">
             Terms of Use
           </h1>
           <p className="text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
@@ -38,7 +38,7 @@ export default function Terms() {
           For details on how we handle your personal data, please review our{" "}
           <a
             href="/privacy"
-            className="text-cyan-600 dark:text-cyan-400 hover:underline"
+            className="text-brand dark:text-cyan-300 hover:underline"
           >
             Privacy Policy
           </a>
@@ -53,7 +53,7 @@ function Section({ title, children }) {
   return (
     <section className="space-y-3">
       <h2 className="text-xl md:text-2xl font-semibold tracking-tight flex items-center gap-2">
-        <span className="h-6 w-1 rounded bg-gradient-to-b from-cyan-500 to-blue-500" />
+  <span className="h-6 w-1 rounded bg-brand dark:bg-brand-dark" />
         {title}
       </h2>
       <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm md:text-base">
