@@ -104,8 +104,17 @@ function Layout() {
     }`;
   };
 
+  // Build root background explicitly from state to prevent desync when the
+  // <html> element still has a lingering .dark class (seen in screenshot where
+  // body remained dark while navbar was light).
+  const rootBg = dark
+    ? "bg-[linear-gradient(180deg,#061529_0%,#071a33_55%,#05101f_100%)]"
+    : "bg-[linear-gradient(180deg,#f0fafe_0%,#ffffff_55%,#e4f5fc_100%)]";
+
   return (
-    <div className="min-h-screen w-full flex flex-col font-sans text-slate-800 dark:text-slate-100 bg-[linear-gradient(180deg,#f0fafe_0%,#ffffff_50%,#e4f5fc_100%)] dark:bg-[linear-gradient(180deg,#061529_0%,#071a33_55%,#05101f_100%)] selection:bg-cyan-500/30 transition-colors">
+    <div
+      className={`min-h-screen w-full flex flex-col font-sans text-slate-800 dark:text-slate-100 ${rootBg} selection:bg-brand/30 transition-colors`}
+    >
       {/* Backdrop */}
       <div
         className={`md:hidden fixed inset-0 z-40 transition-opacity duration-300 ${

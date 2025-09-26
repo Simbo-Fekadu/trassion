@@ -41,7 +41,8 @@ export default function Contact() {
         <section className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
           <div className="space-y-6">
             <h2 className="text-xl md:text-2xl font-semibold tracking-tight flex items-center gap-2">
-              <span className="h-6 w-1 rounded bg-brand dark:bg-brand-dark" /> Quick Contacts
+              <span className="h-6 w-1 rounded bg-brand dark:bg-brand-dark" />{" "}
+              Quick Contacts
             </h2>
             <ul className="space-y-4">
               {infoItems.map((item) => (
@@ -101,7 +102,8 @@ export default function Contact() {
           </div>
           <div className="space-y-6">
             <h2 className="text-xl md:text-2xl font-semibold tracking-tight flex items-center gap-2">
-              <span className="h-6 w-1 rounded bg-brand dark:bg-brand-dark" /> Send Us a Message
+              <span className="h-6 w-1 rounded bg-brand dark:bg-brand-dark" />{" "}
+              Send Us a Message
             </h2>
             <form
               className="grid gap-4"

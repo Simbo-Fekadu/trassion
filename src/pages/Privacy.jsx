@@ -58,7 +58,7 @@ function Section({ title, children }) {
   return (
     <section className="space-y-3">
       <h2 className="text-xl md:text-2xl font-semibold tracking-tight flex items-center gap-2">
-  <span className="h-6 w-1 rounded bg-brand dark:bg-brand-dark" />
+        <span className="h-6 w-1 rounded bg-brand dark:bg-brand-dark" />
         {title}
       </h2>
       <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-sm md:text-base">

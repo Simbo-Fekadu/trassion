@@ -58,7 +58,7 @@ export default function Products() {
     <div className="space-y-14">
       <Container className="space-y-14">
         <header className="space-y-4 max-w-3xl">
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-brand dark:text-cyan-300">
             Our Products
           </h1>
           <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
