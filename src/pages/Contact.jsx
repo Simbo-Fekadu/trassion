@@ -29,144 +29,145 @@ export default function Contact() {
   return (
     <div className="space-y-16">
       <Container className="space-y-16">
-      <header className="space-y-4 max-w-3xl">
-        <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
-          Contact Us
-        </h1>
-        <p className="text-slate-600 dark:text-slate-300">
-          We are here to help. Reach out via any of the official channels below.
-        </p>
-      </header>
-      <section className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-        <div className="space-y-6">
-          <h2 className="text-xl md:text-2xl font-semibold tracking-tight flex items-center gap-2">
-            <span className="h-6 w-1 rounded bg-gradient-to-b from-cyan-500 to-blue-500" />{" "}
-            Quick Contacts
-          </h2>
-          <ul className="space-y-4">
-            {infoItems.map((item) => (
-              <li key={item.label} className="flex gap-3 items-start">
-                <span className="text-lg" aria-hidden>
-                  {item.icon}
-                </span>
-                <div className="text-sm">
-                  <p className="font-medium text-slate-700 dark:text-slate-200">
-                    {item.label}
-                  </p>
-                  {item.href ? (
-                    <a
-                      href={item.href}
-                      className="text-cyan-600 dark:text-cyan-400 hover:underline break-all"
-                    >
-                      {item.value}
-                    </a>
-                  ) : (
-                    <p className="text-slate-600 dark:text-slate-300">
-                      {item.value}
+        <header className="space-y-4 max-w-3xl">
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
+            Contact Us
+          </h1>
+          <p className="text-slate-600 dark:text-slate-300">
+            We are here to help. Reach out via any of the official channels
+            below.
+          </p>
+        </header>
+        <section className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+          <div className="space-y-6">
+            <h2 className="text-xl md:text-2xl font-semibold tracking-tight flex items-center gap-2">
+              <span className="h-6 w-1 rounded bg-gradient-to-b from-cyan-500 to-blue-500" />{" "}
+              Quick Contacts
+            </h2>
+            <ul className="space-y-4">
+              {infoItems.map((item) => (
+                <li key={item.label} className="flex gap-3 items-start">
+                  <span className="text-lg" aria-hidden>
+                    {item.icon}
+                  </span>
+                  <div className="text-sm">
+                    <p className="font-medium text-slate-700 dark:text-slate-200">
+                      {item.label}
                     </p>
-                  )}
-                </div>
-              </li>
-            ))}
-          </ul>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        className="text-cyan-600 dark:text-cyan-400 hover:underline break-all"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="text-slate-600 dark:text-slate-300">
+                        {item.value}
+                      </p>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
 
-          <div className="grid sm:grid-cols-2 gap-4 pt-4">
-            <ContactCard
-              title="Main Office (HQ)"
-              address={[
-                "Transsion Holdings Ethiopia",
-                "Welo Sefer, Garad Building",
-                "Addis Ababa, Ethiopia",
-              ]}
-              phone="+251114671360"
-            />
-            <ContactCard
-              title="Manufacturing Facility"
-              address={[
-                "Transsion Manufacturing PLC",
-                "Bole Sub-City, Wereda 11",
-                "ICT Park, Addis Ababa",
-              ]}
-              badge="ISO 9001:2015"
-            />
-            <ContactCard
-              title="Additional Contacts"
-              details={[
-                "Mobile: +251 9 223 373 91",
-                "Telephone: +251 11 467 1360",
-                "Fax: +251 11 467 1049",
-              ]}
-            />
+            <div className="grid sm:grid-cols-2 gap-4 pt-4">
+              <ContactCard
+                title="Main Office (HQ)"
+                address={[
+                  "Transsion Holdings Ethiopia",
+                  "Welo Sefer, Garad Building",
+                  "Addis Ababa, Ethiopia",
+                ]}
+                phone="+251114671360"
+              />
+              <ContactCard
+                title="Manufacturing Facility"
+                address={[
+                  "Transsion Manufacturing PLC",
+                  "Bole Sub-City, Wereda 11",
+                  "ICT Park, Addis Ababa",
+                ]}
+                badge="ISO 9001:2015"
+              />
+              <ContactCard
+                title="Additional Contacts"
+                details={[
+                  "Mobile: +251 9 223 373 91",
+                  "Telephone: +251 11 467 1360",
+                  "Fax: +251 11 467 1049",
+                ]}
+              />
+            </div>
           </div>
-        </div>
-        <div className="space-y-6">
-          <h2 className="text-xl md:text-2xl font-semibold tracking-tight flex items-center gap-2">
-            <span className="h-6 w-1 rounded bg-gradient-to-b from-cyan-500 to-blue-500" />{" "}
-            Send Us a Message
-          </h2>
-          <form
-            className="grid gap-4"
-            onSubmit={async (e) => {
-              e.preventDefault();
-              const form = e.currentTarget;
-              const data = Object.fromEntries(new FormData(form));
-              setStatus("submitting");
-              setMessage("");
-              try {
-                // Replace FORM_ENDPOINT with your Formspree endpoint e.g. https://formspree.io/f/xxxxx
-                const FORM_ENDPOINT =
-                  import.meta.env.VITE_FORMSPREE_ENDPOINT || "/api/contact";
-                const res = await fetch(FORM_ENDPOINT, {
-                  method: "POST",
-                  headers: { "Content-Type": "application/json" },
-                  body: JSON.stringify(data),
-                });
-                if (!res.ok) throw new Error("Failed to send");
-                setStatus("success");
-                setMessage("Thank you – your message has been sent.");
-                form.reset();
-              } catch {
-                setStatus("error");
-                setMessage("Sorry, something went wrong. Please try again.");
-              }
-            }}
-          >
-            <Input label="Name" name="name" required />
-            <Input label="Email" name="email" type="email" required />
-            <TextArea label="Message" name="message" rows={6} required />
-            {message && (
-              <div
-                className={`text-sm rounded-md px-3 py-2 border ${
-                  status === "success"
-                    ? "bg-green-50 border-green-300 text-green-700 dark:bg-green-500/10 dark:border-green-600 dark:text-green-300"
-                    : status === "error"
-                    ? "bg-red-50 border-red-300 text-red-700 dark:bg-red-500/10 dark:border-red-600 dark:text-red-300"
-                    : "border-slate-300 dark:border-slate-600"
-                }`}
-              >
-                {message}
-              </div>
-            )}
-            <button
-              type="submit"
-              disabled={status === "submitting"}
-              className="justify-center inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold px-6 py-3 hover:from-cyan-400 hover:to-blue-400 shadow-sm hover:shadow transition text-sm disabled:opacity-60 disabled:cursor-not-allowed"
+          <div className="space-y-6">
+            <h2 className="text-xl md:text-2xl font-semibold tracking-tight flex items-center gap-2">
+              <span className="h-6 w-1 rounded bg-gradient-to-b from-cyan-500 to-blue-500" />{" "}
+              Send Us a Message
+            </h2>
+            <form
+              className="grid gap-4"
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const form = e.currentTarget;
+                const data = Object.fromEntries(new FormData(form));
+                setStatus("submitting");
+                setMessage("");
+                try {
+                  // Replace FORM_ENDPOINT with your Formspree endpoint e.g. https://formspree.io/f/xxxxx
+                  const FORM_ENDPOINT =
+                    import.meta.env.VITE_FORMSPREE_ENDPOINT || "/api/contact";
+                  const res = await fetch(FORM_ENDPOINT, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data),
+                  });
+                  if (!res.ok) throw new Error("Failed to send");
+                  setStatus("success");
+                  setMessage("Thank you – your message has been sent.");
+                  form.reset();
+                } catch {
+                  setStatus("error");
+                  setMessage("Sorry, something went wrong. Please try again.");
+                }
+              }}
             >
-              {status === "submitting" ? "Sending..." : "Send Message"}
-            </button>
-          </form>
-          <div className="rounded-xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-700 shadow">
-            <iframe
-              title="Map location of Transsion Holdings Ethiopia"
-              src="https://www.google.com/maps?q=Bole+Lemi+Industrial+Park,+Addis+Ababa,+Ethiopia&output=embed"
-              className="w-full h-64"
-              loading="lazy"
-              allowFullScreen
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+              <Input label="Name" name="name" required />
+              <Input label="Email" name="email" type="email" required />
+              <TextArea label="Message" name="message" rows={6} required />
+              {message && (
+                <div
+                  className={`text-sm rounded-md px-3 py-2 border ${
+                    status === "success"
+                      ? "bg-green-50 border-green-300 text-green-700 dark:bg-green-500/10 dark:border-green-600 dark:text-green-300"
+                      : status === "error"
+                      ? "bg-red-50 border-red-300 text-red-700 dark:bg-red-500/10 dark:border-red-600 dark:text-red-300"
+                      : "border-slate-300 dark:border-slate-600"
+                  }`}
+                >
+                  {message}
+                </div>
+              )}
+              <button
+                type="submit"
+                disabled={status === "submitting"}
+                className="justify-center inline-flex items-center gap-2 rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold px-6 py-3 hover:from-cyan-400 hover:to-blue-400 shadow-sm hover:shadow transition text-sm disabled:opacity-60 disabled:cursor-not-allowed"
+              >
+                {status === "submitting" ? "Sending..." : "Send Message"}
+              </button>
+            </form>
+            <div className="rounded-xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-700 shadow">
+              <iframe
+                title="Map location of Transsion Holdings Ethiopia"
+                src="https://www.google.com/maps?q=Bole+Lemi+Industrial+Park,+Addis+Ababa,+Ethiopia&output=embed"
+                className="w-full h-64"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
       </Container>
     </div>
   );

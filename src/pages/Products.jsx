@@ -57,51 +57,51 @@ export default function Products() {
   return (
     <div className="space-y-14">
       <Container className="space-y-14">
-      <header className="space-y-4 max-w-3xl">
-        <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
-          Our Products
-        </h1>
-        <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-          We proudly distribute and support leading brands: TECNO, Infinix,
-          itel, Syinix, Oraimo and more—bringing innovation, reliability and
-          accessibility to diverse users.
-        </p>
-      </header>
-      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {products.map((p) => (
-          <article
-            key={p.title}
-            className="relative rounded-2xl overflow-hidden border border-slate-200/70 dark:border-slate-700 bg-white/70 dark:bg-slate-800/60 shadow-sm hover:shadow-md transition flex flex-col group"
-          >
-            <div className="product-top-text absolute top-2 left-2 text-[10px] uppercase bg-cyan-600 text-white px-2 py-1 rounded tracking-wide font-medium group-hover:bg-cyan-500">
-              {p.tag}
-            </div>
-            <div className="aspect-square w-full bg-slate-100 dark:bg-slate-900/40 flex items-center justify-center overflow-hidden">
-              <ResponsiveImage
-                file={p.img}
-                alt={p.title}
-                className="object-contain w-full h-full p-4 group-hover:scale-105 transition-transform"
-              />
-            </div>
-            <div className="p-5 flex flex-col gap-3 flex-1">
-              <h3 className="font-semibold text-slate-800 dark:text-slate-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-400">
-                {p.title}
-              </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed flex-1">
-                {p.desc}
-              </p>
-              <a
-                href={p.link}
-                target="_blank"
-                rel="noreferrer"
-                className="inline-flex items-center gap-1 text-sm font-medium text-cyan-600 dark:text-cyan-400 hover:gap-2 transition-all"
-              >
-                Learn More <span aria-hidden>→</span>
-              </a>
-            </div>
-          </article>
-        ))}
-      </div>
+        <header className="space-y-4 max-w-3xl">
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight">
+            Our Products
+          </h1>
+          <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+            We proudly distribute and support leading brands: TECNO, Infinix,
+            itel, Syinix, Oraimo and more—bringing innovation, reliability and
+            accessibility to diverse users.
+          </p>
+        </header>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {products.map((p) => (
+            <article
+              key={p.title}
+              className="relative rounded-2xl overflow-hidden border border-slate-200/70 dark:border-slate-700 bg-white/70 dark:bg-slate-800/60 shadow-sm hover:shadow-md transition flex flex-col group"
+            >
+              <div className="product-top-text absolute top-2 left-2 text-[10px] uppercase bg-cyan-600 text-white px-2 py-1 rounded tracking-wide font-medium group-hover:bg-cyan-500">
+                {p.tag}
+              </div>
+              <div className="aspect-square w-full bg-slate-100 dark:bg-slate-900/40 flex items-center justify-center overflow-hidden">
+                <ResponsiveImage
+                  file={p.img}
+                  alt={p.title}
+                  className="object-contain w-full h-full p-4 group-hover:scale-105 transition-transform"
+                />
+              </div>
+              <div className="p-5 flex flex-col gap-3 flex-1">
+                <h3 className="font-semibold text-slate-800 dark:text-slate-100 group-hover:text-cyan-600 dark:group-hover:text-cyan-400">
+                  {p.title}
+                </h3>
+                <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed flex-1">
+                  {p.desc}
+                </p>
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1 text-sm font-medium text-cyan-600 dark:text-cyan-400 hover:gap-2 transition-all"
+                >
+                  Learn More <span aria-hidden>→</span>
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
       </Container>
     </div>
   );

@@ -10,27 +10,27 @@ export default function About() {
   return (
     <div className="space-y-20">
       <Container>
-      <section className="grid md:grid-cols-2 gap-10 items-center">
-        <div className="rounded-xl shadow ring-1 ring-slate-200/70 dark:ring-slate-700 overflow-hidden bg-slate-100 dark:bg-slate-900/40">
-          <ResponsiveImage
-            file="TRANSSIONHOME.png"
-            alt="Transsion Holdings Ethiopia"
-            className="object-cover w-full max-h-[360px]"
-          />
-        </div>
-        <div className="space-y-4">
-          <h1 className="text-3xl md:text-4xl font-bold tracking-tight bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-            Welcome to Transsion Holdings Ethiopia
-          </h1>
-          <p className="leading-relaxed text-slate-600 dark:text-slate-300">
-            We deliver innovative and affordable technology solutions across
-            Africa, connecting communities and empowering people.
-          </p>
-        </div>
-      </section>
+        <section className="grid md:grid-cols-2 gap-10 items-center">
+          <div className="rounded-xl shadow ring-1 ring-slate-200/70 dark:ring-slate-700 overflow-hidden bg-slate-100 dark:bg-slate-900/40">
+            <ResponsiveImage
+              file="TRANSSIONHOME.png"
+              alt="Transsion Holdings Ethiopia"
+              className="object-cover w-full max-h-[360px]"
+            />
+          </div>
+          <div className="space-y-4">
+            <h1 className="text-3xl md:text-4xl font-bold tracking-tight bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+              Welcome to Transsion Holdings Ethiopia
+            </h1>
+            <p className="leading-relaxed text-slate-600 dark:text-slate-300">
+              We deliver innovative and affordable technology solutions across
+              Africa, connecting communities and empowering people.
+            </p>
+          </div>
+        </section>
       </Container>
 
-      <section className="space-y-10 px-4 md:px-8 max-w-7xl mx-auto">
+      <Container className="space-y-10">
         <div className={sectionTitle}>{gradientBar} Our Mission</div>
         <p className="text-slate-600 dark:text-slate-300 max-w-3xl">
           To empower individuals and communities across Africa by connecting
@@ -53,7 +53,7 @@ export default function About() {
             </li>
           ))}
         </ul>
-      </section>
+      </Container>
 
       <GalleryBlock
         title="Community Engagement"
@@ -71,7 +71,7 @@ export default function About() {
         images={["an.png", "ann.png", "annu.png"]}
       />
 
-      <section className="space-y-10 px-4 md:px-8 max-w-7xl mx-auto">
+      <Container className="space-y-10">
         <div className={sectionTitle}>{gradientBar} Departments & Roles</div>
         <p className="text-slate-600 dark:text-slate-300 max-w-4xl">
           Our strength comes from specialized teams working together to deliver
@@ -102,14 +102,14 @@ export default function About() {
             </div>
           ))}
         </div>
-      </section>
+      </Container>
     </div>
   );
 }
 
 function GalleryBlock({ title, text, images }) {
   return (
-    <section className="space-y-6">
+    <Container className="space-y-6">
       <h3 className="text-2xl font-semibold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
         {title}
       </h3>
@@ -128,7 +128,7 @@ function GalleryBlock({ title, text, images }) {
           </div>
         ))}
       </div>
-    </section>
+    </Container>
   );
 }
 

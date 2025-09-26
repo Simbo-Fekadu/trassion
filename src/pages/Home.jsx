@@ -1,4 +1,5 @@
 import ResponsiveImage from "../components/ResponsiveImage";
+import Container from "../components/Container";
 
 export default function Home() {
   return (
@@ -33,7 +34,8 @@ export default function Home() {
           </a>
         </div>
       </section>
-      <div className="px-0 space-y-24">
+      <div className="space-y-24">
+        <Container className="space-y-24">
         <section className="space-y-6" id="who">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight flex items-center gap-3">
             <span className="h-8 w-1 rounded bg-gradient-to-b from-cyan-500 to-blue-500" />
@@ -52,7 +54,7 @@ export default function Home() {
             Learn More <span aria-hidden>→</span>
           </a>
         </section>
-        <section className="space-y-8 px-4 md:px-8 max-w-7xl mx-auto">
+        <section className="space-y-8">
           <h2 className="text-2xl md:text-3xl font-semibold tracking-tight flex items-center gap-3">
             <span className="h-8 w-1 rounded bg-gradient-to-b from-cyan-500 to-blue-500" />
             Our Brands
@@ -80,6 +82,7 @@ export default function Home() {
             ))}
           </div>
         </section>
+        </Container>
       </div>
     </div>
   );

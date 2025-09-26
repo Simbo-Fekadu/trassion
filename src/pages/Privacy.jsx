@@ -3,51 +3,52 @@ export default function Privacy() {
   return (
     <div className="space-y-12">
       <Container size="md" className="space-y-12">
-      <header className="space-y-4 pt-2">
-        <h1 className="text-3xl md:text-4xl font-bold tracking-tight bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
-          Privacy Policy
-        </h1>
-        <p className="text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
-          Your privacy is important to us. We handle your personal information
-          responsibly and securely, and never share it without your consent.
+        <header className="space-y-4 pt-2">
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+            Privacy Policy
+          </h1>
+          <p className="text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
+            Your privacy is important to us. We handle your personal information
+            responsibly and securely, and never share it without your consent.
+          </p>
+        </header>
+
+        <Section title="Information We Collect">
+          We may collect personal information such as your name, email address,
+          and other details when you contact us or use our services.
+        </Section>
+        <Section title="How We Use Your Information">
+          Your information helps us provide better services, respond to
+          inquiries, and improve your experience on our website.
+        </Section>
+        <Section title="Data Security">
+          We implement security measures to protect your data from unauthorized
+          access, alteration, or disclosure.
+        </Section>
+        <Section title="Third-Party Sharing">
+          We do not sell or share your personal data with third parties except
+          as required by law or to trusted partners helping us deliver our
+          services.
+        </Section>
+        <Section title="Cookies and Tracking">
+          Our website may use cookies to enhance user experience. You can manage
+          cookie preferences through your browser settings.
+        </Section>
+        <Section title="Changes to this Policy">
+          We may update this privacy policy periodically. Please review it
+          regularly for any changes.
+        </Section>
+
+        <p className="text-sm text-slate-600 dark:text-slate-400">
+          For our terms and conditions, please see our{" "}
+          <a
+            href="/terms"
+            className="text-cyan-600 dark:text-cyan-400 hover:underline"
+          >
+            Terms of Use
+          </a>
+          .
         </p>
-      </header>
-
-      <Section title="Information We Collect">
-        We may collect personal information such as your name, email address,
-        and other details when you contact us or use our services.
-      </Section>
-      <Section title="How We Use Your Information">
-        Your information helps us provide better services, respond to inquiries,
-        and improve your experience on our website.
-      </Section>
-      <Section title="Data Security">
-        We implement security measures to protect your data from unauthorized
-        access, alteration, or disclosure.
-      </Section>
-      <Section title="Third-Party Sharing">
-        We do not sell or share your personal data with third parties except as
-        required by law or to trusted partners helping us deliver our services.
-      </Section>
-      <Section title="Cookies and Tracking">
-        Our website may use cookies to enhance user experience. You can manage
-        cookie preferences through your browser settings.
-      </Section>
-      <Section title="Changes to this Policy">
-        We may update this privacy policy periodically. Please review it
-        regularly for any changes.
-      </Section>
-
-      <p className="text-sm text-slate-600 dark:text-slate-400">
-        For our terms and conditions, please see our{" "}
-        <a
-          href="/terms"
-          className="text-cyan-600 dark:text-cyan-400 hover:underline"
-        >
-          Terms of Use
-        </a>
-        .
-      </p>
       </Container>
     </div>
   );
