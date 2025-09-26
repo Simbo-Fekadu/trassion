@@ -286,10 +286,18 @@ function Layout() {
               {n.label}
             </NavLink>
           ))}
-          <div className={`mt-6 border-t pt-4 flex items-center justify-between ${dark ? "border-white/10" : "border-white/30"}`}>
+          <div
+            className={`mt-6 border-t pt-4 flex items-center justify-between ${
+              dark ? "border-white/10" : "border-white/30"
+            }`}
+          >
             <button
               onClick={() => setDark((d) => !d)}
-              className={`inline-flex items-center gap-2 text-sm font-medium ${dark ? "text-white/80 hover:text-white" : "text-white/85 hover:text-white"}`}
+              className={`inline-flex items-center gap-2 text-sm font-medium ${
+                dark
+                  ? "text-white/80 hover:text-white"
+                  : "text-white/85 hover:text-white"
+              }`}
             >
               {dark ? (
                 <span className="flex items-center gap-1">
@@ -334,9 +342,25 @@ function Layout() {
       <footer className="mt-auto pt-8 pb-5 text-[11px] md:text-sm bg-[#33A1E0] dark:bg-[linear-gradient(135deg,#041a2e_0%,#052f49_55%,#073f60_100%)] text-white dark:text-slate-200 border-t border-[#33A1E0] dark:border-slate-700/70">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           <div className="space-y-4 max-w-md">
-            <h3 className="font-semibold text-sm md:text-base tracking-wide">Transsion Holdings Ethiopia</h3>
-            <p className="leading-relaxed text-white/85 dark:text-slate-100/70">Delivering accessible smart technology and services that empower communities across Africa.</p>
-            <div className="flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-white/70">{["TECNO","Infinix","itel","Syinix","Oraimo","Carlcare"].map(b=> <span key={b} className="after:mx-1 after:text-white/50 after:content-['•'] last:after:content-none">{b}</span>)}</div>
+            <h3 className="font-semibold text-sm md:text-base tracking-wide">
+              Transsion Holdings Ethiopia
+            </h3>
+            <p className="leading-relaxed text-white/85 dark:text-slate-100/70">
+              Delivering accessible smart technology and services that empower
+              communities across Africa.
+            </p>
+            <div className="flex flex-wrap gap-x-3 gap-y-1 text-[11px] text-white/70">
+              {["TECNO", "Infinix", "itel", "Syinix", "Oraimo", "Carlcare"].map(
+                (b) => (
+                  <span
+                    key={b}
+                    className="after:mx-1 after:text-white/50 after:content-['•'] last:after:content-none"
+                  >
+                    {b}
+                  </span>
+                )
+              )}
+            </div>
           </div>
           <div className="flex flex-col gap-4 md:items-end">
             <ul className="flex gap-3" aria-label="Social media">
@@ -372,9 +396,13 @@ function Layout() {
               ))}
             </ul>
             <div className="flex items-center gap-4 text-white/60 dark:text-white/45">
-              <a href="/privacy" className="hover:text-white">Privacy</a>
+              <a href="/privacy" className="hover:text-white">
+                Privacy
+              </a>
               <span className="h-3 w-px bg-white/35 dark:bg-white/15" />
-              <a href="/terms" className="hover:text-white">Terms</a>
+              <a href="/terms" className="hover:text-white">
+                Terms
+              </a>
             </div>
           </div>
         </div>

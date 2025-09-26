@@ -1,9 +1,12 @@
 import ResponsiveImage from "../components/ResponsiveImage";
 import Container from "../components/Container";
+
+// Reusable styles
 const sectionTitle =
   "text-xl md:text-2xl font-semibold tracking-tight flex items-center gap-2";
+// Brand accent bar now uses brand color tokens instead of fixed cyan/blue gradient
 const gradientBar = (
-  <span className="h-7 w-1 rounded bg-gradient-to-b from-cyan-500 to-blue-500" />
+  <span className="h-7 w-1 rounded bg-brand dark:bg-brand-dark" />
 );
 
 export default function About() {
@@ -19,7 +22,7 @@ export default function About() {
             />
           </div>
           <div className="space-y-4">
-            <h1 className="text-3xl md:text-4xl font-bold tracking-tight bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+            <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-brand dark:text-cyan-300">
               Welcome to Transsion Holdings Ethiopia
             </h1>
             <p className="leading-relaxed text-slate-600 dark:text-slate-300">
@@ -31,12 +34,12 @@ export default function About() {
       </Container>
 
       <Container className="space-y-10">
-        <div className={sectionTitle}>{gradientBar} Our Mission</div>
+  <div className={sectionTitle}>{gradientBar} Our Mission</div>
         <p className="text-slate-600 dark:text-slate-300 max-w-3xl">
           To empower individuals and communities across Africa by connecting
           them through innovative mobile and electronic products.
         </p>
-        <div className={sectionTitle}>{gradientBar} Our Values</div>
+  <div className={sectionTitle}>{gradientBar} Our Values</div>
         <ul className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 text-sm">
           {[
             "Customer-centric approach",
@@ -48,7 +51,7 @@ export default function About() {
               key={v}
               className="rounded-lg bg-white/70 dark:bg-slate-800/60 p-4 border border-slate-200/70 dark:border-slate-700 shadow-sm flex items-start gap-2"
             >
-              <span className="mt-1 text-cyan-500">•</span>
+              <span className="mt-1 text-brand dark:text-cyan-400">•</span>
               <span>{v}</span>
             </li>
           ))}
@@ -110,7 +113,7 @@ export default function About() {
 function GalleryBlock({ title, text, images }) {
   return (
     <Container className="space-y-6">
-      <h3 className="text-2xl font-semibold bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
+      <h3 className="text-2xl font-semibold text-brand dark:text-cyan-300">
         {title}
       </h3>
       <p className="text-slate-600 dark:text-slate-300 max-w-3xl">{text}</p>
