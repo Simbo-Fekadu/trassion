@@ -87,7 +87,7 @@ function Layout() {
     }`;
 
   return (
-  <div className="app-root min-h-screen w-full flex flex-col font-sans selection:bg-white/30">
+    <div className="app-root min-h-screen w-full flex flex-col font-sans selection:bg-white/30">
       {/* Backdrop */}
       <div
         className={`md:hidden fixed inset-0 z-40 transition-opacity duration-300 ${
@@ -191,7 +191,7 @@ function Layout() {
       <main className="flex-1 pt-28 md:pt-32 pb-12">
         <Outlet />
       </main>
-  <footer className="mt-auto pt-8 pb-5 text-[11px] md:text-sm bg-[#33A1E0] text-white border-t border-[#33A1E0]">
+      <footer className="mt-auto pt-8 pb-5 text-[11px] md:text-sm bg-[#33A1E0] text-white border-t border-[#33A1E0]">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           <div className="space-y-4 max-w-md">
             <h3 className="font-semibold text-sm md:text-base tracking-wide">

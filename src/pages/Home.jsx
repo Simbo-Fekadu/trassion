@@ -21,7 +21,7 @@ export default function Home() {
         </div>
         <div className="relative h-full flex flex-col items-center justify-center text-center px-6">
           <h1 className="text-3xl md:text-5xl font-bold text-white drop-shadow-lg max-w-4xl">
-            Empowering Africa with Smart Technology
+            Together we can
           </h1>
           <p className="mt-5 text-slate-200 max-w-2xl text-sm md:text-lg leading-relaxed">
             Connecting communities through innovative mobile solutions.

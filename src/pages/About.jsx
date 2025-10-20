@@ -64,8 +64,8 @@ export default function About() {
         images={["Comeng.png", "comm.png", "commegn.png"]}
       />
       <GalleryBlock
-        title="Ethiopian Tamririt Expo"
-        text="Showcasing our Ethiopian Tamririt Expo to highlight our commitment to technology and community growth."
+        title="Ethiopian Timirt Expo"
+        text="Showcasing our Ethiopian Timirt Expo to highlight our commitment to technology and community growth."
         images={["run.png", "runn.png", "runnn.png"]}
       />
       <GalleryBlock
