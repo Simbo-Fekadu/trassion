@@ -57,16 +57,6 @@ function Icon({ name, className = "w-5 h-5" }) {
 
 function Layout() {
   const [open, setOpen] = useState(false);
-  const [dark, setDark] = useState(() => {
-    try {
-      const saved = localStorage.getItem("theme");
-      if (saved === "dark") return true;
-      if (saved === "light") return false;
-      return window.matchMedia("(prefers-color-scheme: dark)").matches;
-    } catch {
-      return false;
-    }
-  });
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -79,33 +69,25 @@ function Layout() {
     document.body.classList.toggle("overflow-hidden", open);
   }, [open]);
 
+  // Ensure any previous dark-mode remnants are removed
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", dark);
+    document.documentElement.classList.remove("dark");
     try {
-      localStorage.setItem("theme", dark ? "dark" : "light");
+      localStorage.removeItem("theme");
     } catch {
-      // ignore persistence errors (e.g., private mode)
+      // ignore
     }
-  }, [dark]);
+  }, []);
 
-  const linkClass = ({ isActive }) => {
-    if (dark) {
-      return `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-        isActive
-          ? "text-cyan-200 bg-white/10"
-          : "text-white/80 hover:text-white hover:bg-white/10"
-      }`;
-    }
-    // Light mode on brand bar (#33A1E0) -> use white text, subtle active pill.
-    return `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+  const linkClass = ({ isActive }) =>
+    `px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
       isActive
         ? "bg-white/25 text-white shadow-inner"
         : "text-white/90 hover:text-white hover:bg-white/15"
     }`;
-  };
 
   return (
-    <div className="app-root min-h-screen w-full flex flex-col font-sans selection:bg-white/30 dark:selection:bg-cyan-500/30">
+  <div className="app-root min-h-screen w-full flex flex-col font-sans selection:bg-white/30">
       {/* Backdrop */}
       <div
         className={`md:hidden fixed inset-0 z-40 transition-opacity duration-300 ${
@@ -118,11 +100,7 @@ function Layout() {
       <header
         className={`fixed top-0 inset-x-0 z-50 backdrop-blur transition-all ${
           scrolled ? "py-2" : "py-3"
-        } ${
-          dark
-            ? "bg-[linear-gradient(90deg,#021223_0%,#032b52_55%,#03406f_100%)] shadow"
-            : "bg-[#33A1E0] shadow-md"
-        }`}
+        } bg-[#33A1E0] shadow-md`}
       >
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between gap-4">
           <NavLink
@@ -155,81 +133,8 @@ function Layout() {
                 {n.label}
               </NavLink>
             ))}
-            <button
-              onClick={() => setDark((d) => !d)}
-              className={`ml-2 inline-flex h-9 w-9 items-center justify-center rounded-md border transition ${
-                dark
-                  ? "border-white/20 text-white/80 hover:text-white hover:bg-white/10"
-                  : "border-white/35 text-white/80 hover:text-white hover:bg-white/20"
-              }`}
-              aria-label="Toggle dark mode"
-              title={dark ? "Switch to light mode" : "Switch to dark mode"}
-            >
-              {dark ? (
-                <svg
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
-                </svg>
-              ) : (
-                <svg
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="12" cy="12" r="5" />
-                  <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-                </svg>
-              )}
-            </button>
           </nav>
           <div className="flex items-center gap-2 md:hidden">
-            <button
-              onClick={() => setDark((d) => !d)}
-              className={`inline-flex h-9 w-9 items-center justify-center rounded-md border transition ${
-                dark
-                  ? "border-white/20 text-white/80 hover:text-white hover:bg-white/10"
-                  : "border-white/35 text-white/80 hover:text-white hover:bg-white/20"
-              }`}
-              aria-label="Toggle dark mode"
-            >
-              {dark ? (
-                <svg
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
-                </svg>
-              ) : (
-                <svg
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="12" cy="12" r="5" />
-                  <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-                </svg>
-              )}
-            </button>
             <button
               aria-label="Toggle navigation"
               aria-expanded={open}
@@ -260,11 +165,7 @@ function Layout() {
         <div
           className={`md:hidden fixed top-0 right-0 h-full w-72 max-w-[80%] z-50 backdrop-blur-xl shadow-xl pt-24 pb-8 px-6 flex flex-col gap-3 transform transition-transform duration-300 ${
             open ? "translate-x-0" : "translate-x-full"
-          } ${
-            dark
-              ? "bg-[linear-gradient(180deg,#052038_0%,#063255_45%,#041627_100%)] text-slate-100"
-              : "bg-[#33A1E0] text-white"
-          }`}
+          } bg-[#33A1E0] text-white`}
         >
           {navItems.map((n) => (
             <NavLink
@@ -272,11 +173,7 @@ function Layout() {
               to={n.to}
               className={({ isActive }) =>
                 `block rounded px-3 py-2 text-sm font-medium tracking-wide ${
-                  dark
-                    ? isActive
-                      ? "bg-cyan-500/20 text-cyan-300"
-                      : "text-slate-100 hover:bg-white/10"
-                    : isActive
+                  isActive
                     ? "bg-white/25 text-white"
                     : "text-white/85 hover:bg-white/15"
                 }`
@@ -286,66 +183,21 @@ function Layout() {
               {n.label}
             </NavLink>
           ))}
-          <div
-            className={`mt-6 border-t pt-4 flex items-center justify-between ${
-              dark ? "border-white/10" : "border-white/30"
-            }`}
-          >
-            <button
-              onClick={() => setDark((d) => !d)}
-              className={`inline-flex items-center gap-2 text-sm font-medium ${
-                dark
-                  ? "text-white/80 hover:text-white"
-                  : "text-white/85 hover:text-white"
-              }`}
-            >
-              {dark ? (
-                <span className="flex items-center gap-1">
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
-                  </svg>
-                  Dark
-                </span>
-              ) : (
-                <span className="flex items-center gap-1">
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <circle cx="12" cy="12" r="5" />
-                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-                  </svg>
-                  Light
-                </span>
-              )}
-            </button>
-            <span className="text-xs text-slate-400">© 2025</span>
+          <div className="mt-6 border-t border-white/30 pt-4 flex items-center justify-end">
+            <span className="text-xs text-white/80">© 2025</span>
           </div>
         </div>
       </header>
       <main className="flex-1 pt-28 md:pt-32 pb-12">
         <Outlet />
       </main>
-      <footer className="mt-auto pt-8 pb-5 text-[11px] md:text-sm bg-[#33A1E0] dark:bg-[linear-gradient(135deg,#041a2e_0%,#052f49_55%,#073f60_100%)] text-white dark:text-slate-200 border-t border-[#33A1E0] dark:border-slate-700/70">
+  <footer className="mt-auto pt-8 pb-5 text-[11px] md:text-sm bg-[#33A1E0] text-white border-t border-[#33A1E0]">
         <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           <div className="space-y-4 max-w-md">
             <h3 className="font-semibold text-sm md:text-base tracking-wide">
               Transsion Holdings Ethiopia
             </h3>
-            <p className="leading-relaxed text-white/85 dark:text-slate-100/70">
+            <p className="leading-relaxed text-white/85">
               Delivering accessible smart technology and services that empower
               communities across Africa.
             </p>
@@ -395,7 +247,7 @@ function Layout() {
                 </li>
               ))}
             </ul>
-            <div className="flex items-center gap-4 text-white/60 dark:text-white/45">
+            <div className="flex items-center gap-4 text-white/60">
               <a href="/privacy" className="hover:text-white">
                 Privacy
               </a>
@@ -406,7 +258,7 @@ function Layout() {
             </div>
           </div>
         </div>
-        <div className="mt-6 mx-auto max-w-7xl px-4 pt-4 border-t border-white/30 dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-3 text-[10px] md:text-[11px] text-white/70 dark:text-white/55 tracking-wide">
+        <div className="mt-6 mx-auto max-w-7xl px-4 pt-4 border-t border-white/30 flex flex-col md:flex-row items-center justify-between gap-3 text-[10px] md:text-[11px] text-white/70 tracking-wide">
           <span>
             © {new Date().getFullYear()} Transsion Holdings Ethiopia. All rights
             reserved.
