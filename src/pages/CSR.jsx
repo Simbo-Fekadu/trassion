@@ -27,69 +27,117 @@ export default function CSR() {
             growth.
           </p>
         </header>
-        <div className="max-w-5xl mx-auto space-y-12">
-          <Section title="Our CSR Commitment">
-            <ul className="grid sm:grid-cols-2 gap-3 text-sm">
-              <li>
-                <strong>Ethical Manufacturing:</strong> International standards
-                for labor rights, workplace safety, and environmental
-                protection.
-              </li>
-              <li>
-                <strong>Community Engagement:</strong> Skills development, job
-                creation, and youth opportunity programs.
-              </li>
-              <li>
-                <strong>Sustainability:</strong> Waste reduction, energy
-                efficiency, and responsible sourcing.
-              </li>
-              <li>
-                <strong>Innovation for Inclusion:</strong> Accessible,
-                affordable, locally relevant technology.
-              </li>
-            </ul>
-          </Section>
+        <div className="max-w-6xl mx-auto space-y-10">
+          {/* At a glance strip */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {[
+              { label: "Theme", value: "People • Planet • Prosperity" },
+              { label: "Approach", value: "Ethics • Inclusion • Impact" },
+              { label: "Programs", value: "Education • Relief • Green" },
+              { label: "Partnering", value: "UN • NGOs • Gov" },
+            ].map((m) => (
+              <div
+                key={m.label}
+                className="rounded-xl px-4 py-3 border border-white/30 text-white/90 bg-white/10"
+              >
+                <div className="text-[11px] uppercase tracking-wide opacity-80">
+                  {m.label}
+                </div>
+                <div className="text-sm font-medium">{m.value}</div>
+              </div>
+            ))}
+          </div>
 
-          <Section title="Global CSR Highlights">
-            <ul className="grid sm:grid-cols-2 gap-3 text-sm">
-              <li>
-                <strong>Education for Refugees & Youth:</strong> UNHCR
-                partnerships, DAFI scholarships, and refugee learning support.
-              </li>
-              <li>
-                <strong>Digital Learning Programs:</strong> UNICEF Learning
-                Passport, TECNO Future Star scholarships, tech-enabled
-                classrooms.
-              </li>
-              <li>
-                <strong>Community & Relief Efforts:</strong> Itel "Love Always
-                On" campaigns, disaster aid, and school donations.
-              </li>
-              <li>
-                <strong>Environmental Responsibility:</strong> Conflict-free
-                minerals policy, lean manufacturing, green design.
-              </li>
-            </ul>
-          </Section>
+          {/* Commitment as checklist card */}
+          <div className="rounded-2xl border border-white/30 bg-white/10 p-6 shadow-sm">
+            <Section title="Our CSR Commitment">
+              <ul className="grid sm:grid-cols-2 gap-3 text-sm">
+                {[
+                  [
+                    "Ethical Manufacturing:",
+                    "International standards for labor rights, workplace safety, and environmental protection.",
+                  ],
+                  [
+                    "Community Engagement:",
+                    "Skills development, job creation, and youth opportunity programs.",
+                  ],
+                  [
+                    "Sustainability:",
+                    "Waste reduction, energy efficiency, and responsible sourcing.",
+                  ],
+                  [
+                    "Innovation for Inclusion:",
+                    "Accessible, affordable, locally relevant technology.",
+                  ],
+                ].map(([k, v]) => (
+                  <li key={k} className="flex items-start gap-2">
+                    <span className="mt-1 text-white/80">•</span>
+                    <span>
+                      <strong>{k}</strong> {v}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </Section>
+          </div>
 
-          <Section title="Our Focus in Ethiopia">
-            <p className="text-slate-700 dark:text-slate-300">
-              As our presence grows locally, we focus on:
-            </p>
-            <ul className="grid sm:grid-cols-2 gap-3 text-sm mt-2">
-              <li>Education and community support initiatives.</li>
-              <li>
-                Partnerships with government and NGOs on key social goals.
-              </li>
-              <li>
-                Meaningful, fair employment with strong working conditions.
-              </li>
-            </ul>
-            <p className="mt-4 text-slate-700 dark:text-slate-300">
-              CSR here is more than policy—it's culture that shapes how we
-              build, serve, and sustain for the future.
-            </p>
-          </Section>
+          {/* Global highlights as cards grid */}
+          <Section title="Global CSR Highlights" />
+          <div className="grid md:grid-cols-2 gap-4">
+            {[
+              [
+                "Education for Refugees & Youth",
+                "UNHCR partnerships, DAFI scholarships, and refugee learning support.",
+              ],
+              [
+                "Digital Learning Programs",
+                "UNICEF Learning Passport, TECNO Future Star scholarships, tech-enabled classrooms.",
+              ],
+              [
+                "Community & Relief Efforts",
+                "Itel 'Love Always On' campaigns, disaster aid, and school donations.",
+              ],
+              [
+                "Environmental Responsibility",
+                "Conflict-free minerals policy, lean manufacturing, green design.",
+              ],
+            ].map(([t, d]) => (
+              <div
+                key={t}
+                className="rounded-xl p-5 border border-white/30 bg-white/10 flex flex-col gap-2"
+              >
+                <h3 className="font-semibold text-white">{t}</h3>
+                <p className="text-sm text-white/90 dark:text-slate-300 leading-relaxed">
+                  {d}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Ethiopia focus */}
+          <div className="rounded-2xl border border-white/30 bg-white/10 p-6">
+            <Section title="Our Focus in Ethiopia">
+              <p className="text-white/90 dark:text-slate-300">
+                As our presence grows locally, we focus on:
+              </p>
+              <ul className="grid sm:grid-cols-2 gap-3 text-sm mt-2">
+                {[
+                  "Education and community support initiatives.",
+                  "Partnerships with government and NGOs on key social goals.",
+                  "Meaningful, fair employment with strong working conditions.",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="mt-1 text-white/80">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-4 text-white/90 dark:text-slate-300">
+                CSR here is more than policy—it's culture that shapes how we
+                build, serve, and sustain for the future.
+              </p>
+            </Section>
+          </div>
         </div>
       </Container>
     </div>

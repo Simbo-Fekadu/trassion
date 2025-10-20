@@ -110,8 +110,8 @@ export default function IMS() {
             <div className="rounded-xl p-5 border border-white/30 bg-white/10">
               <Section title="Our Vision">
                 <p className="text-white/90 dark:text-slate-300">
-                  Lead in integrating quality, sustainability, safety, and energy
-                  efficiency for long-term stakeholder value.
+                  Lead in integrating quality, sustainability, safety, and
+                  energy efficiency for long-term stakeholder value.
                 </p>
               </Section>
             </div>
